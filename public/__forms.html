@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head><meta charset="UTF-8" /><title>Netlify Form Detection</title></head>
+<body>
+<!--
+  Netlify needs to parse this form at build time to know the field list.
+  It is never shown to users. Do not delete or rename fields here.
+-->
+<form name="retreat-application" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="retreat-application" />
+  <input type="text"  name="bot-field" />
+
+  <!-- Step 1: Personal -->
+  <input type="text"  name="full_name" />
+  <input type="date"  name="dob" />
+  <input type="tel"   name="phone" />
+  <input type="email" name="email" />
+  <input type="text"  name="instagram" />
+  <input type="text"  name="city" />
+  <input type="text"  name="occupation" />
+
+  <!-- Step 2: Medical -->
+  <input type="text"     name="food_sensitivity" />
+  <textarea              name="food_sensitivity_detail"></textarea>
+  <textarea              name="allergies"></textarea>
+  <textarea              name="medical_conditions"></textarea>
+  <textarea              name="medications"></textarea>
+  <textarea              name="physical_limitations"></textarea>
+  <input type="text"     name="health_fund" />
+  <input type="text"     name="emergency_contact_name" />
+  <input type="tel"      name="emergency_contact_phone" />
+  <input type="text"     name="emergency_contact_relation" />
+
+  <!-- Step 3: Food -->
+  <input type="text"  name="diet_type" />
+  <input type="text"  name="diet_other" />
+  <textarea           name="food_dislikes"></textarea>
+  <input type="text"  name="favorite_meal" />
+  <input type="text"  name="favorite_drink" />
+
+  <!-- Step 4: Koh Phangan -->
+  <input type="text"   name="been_to_kpg" />
+  <input type="number" name="kpg_times" />
+  <textarea            name="kpg_return_places"></textarea>
+  <textarea            name="kpg_wish_places"></textarea>
+  <input type="text"   name="has_motorcycle_license" />
+  <input type="text"   name="wants_motorcycle" />
+  <input type="text"   name="driving_level" />
+
+  <!-- Step 5: Experience -->
+  <input type="text"  name="interests" />
+  <textarea           name="retreat_expectations"></textarea>
+  <textarea           name="meaningful_experience"></textarea>
+
+  <!-- Step 6: About you -->
+  <textarea           name="registration_reason"></textarea>
+  <textarea           name="life_situation"></textarea>
+  <textarea           name="change_one_thing"></textarea>
+  <textarea           name="biggest_goal"></textarea>
+  <textarea           name="take_home"></textarea>
+  <input type="text"  name="three_words" />
+
+  <!-- Step 7: Good life -->
+  <input type="text"   name="vacation_types" />
+  <input type="number" name="rating_yoga" />
+  <input type="number" name="rating_parties" />
+  <input type="number" name="rating_workshops" />
+  <input type="number" name="rating_fitness" />
+  <input type="number" name="rating_hikes" />
+  <input type="number" name="rating_chef_meals" />
+  <input type="number" name="rating_networking" />
+
+  <!-- Step 8: Personalization -->
+  <textarea name="surprise_me"></textarea>
+  <textarea name="birthday_during"></textarea>
+  <textarea name="special_occasion"></textarea>
+  <textarea name="dream_moment"></textarea>
+  <textarea name="additional_notes"></textarea>
+
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

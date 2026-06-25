@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-sand: #F2ECE0;
+  --color-jungle: #2E4636;
+  --color-teak: #A86A45;
+  --color-ink: #1F1B16;
+  --color-sage: #8FA48C;
+
+  /* Font families — two families only: Frank Ruhl Libre (headings/eyebrows) + Assistant (body) */
+  --font-frank: var(--font-frank);
+  --font-assistant: var(--font-assistant);
+
+  /* Spacing */
+  --spacing-section: clamp(5rem, 10vw, 9rem);
+
+  /* Border radius */
+  --radius-card: 0.75rem;
+}
+
+/* Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+}
+
+body {
+  background-color: #F2ECE0;
+  color: #1F1B16;
+  font-family: var(--font-assistant), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* RTL-safe scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F2ECE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #8FA48C;
+  border-radius: 3px;
+}
+
+/* Focus visible ring */
+:focus-visible {
+  outline: 2px solid #A86A45;
+  outline-offset: 3px;
+}
+
+/* Reduced motion: disable all animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
