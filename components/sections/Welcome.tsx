@@ -73,51 +73,36 @@ export default function Welcome() {
         </div>
       </div>
 
-      {/* ── Block 2: Why Koh Phangan — image + text (reversed), beige band ── */}
-      <div className="py-section px-6 bg-[#DCE0D8]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
-            <Reveal className="lg:col-span-6 lg:order-1 order-2" delay={0.3} direction="right">
-              <div className="relative w-full aspect-[4/3]  overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.45)]">
-                <Image
-                  src={IMAGES.villaPoolDusk}
-                  alt="הוילה בשקיעה עם נוף לים"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </Reveal>
-
-            <div className="lg:col-span-6 lg:order-2 order-1 space-y-7">
-              <Reveal delay={0.1}>
-                <p className="eyebrow">Why Koh Phangan</p>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <h2
-                  className="font-heading text-[#28302C] leading-[1.05]"
-                  style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)" }}
-                >
-                  למה דווקא קופנגן?
-                </h2>
-              </Reveal>
-              <Reveal delay={0.3}>
-                <div className="rule" />
-              </Reveal>
-              <Reveal delay={0.4}>
-                <p
-                  className="font-assistant text-[#28302C]/80 leading-loose whitespace-pre-line"
-                  style={{ fontSize: "clamp(1rem, 1.4vw, 1.2rem)" }}
-                >
-                  {`קופנגן הוא אי של טבע פראי, מים בצבע טורקיז, חופים לבנים וג'ונגלים ירוקים שנפגשים עם הים.
-יש בו אנרגיה שקשה להסביר במילים.
-שילוב נדיר של שקט, חופש ופשטות שמאפשרים לגוף להירגע וללב להיפתח.
-אבל מעבר לכל היופי שבו, קופנגן הפך בשנים האחרונות לבית של קהילה בינלאומית של יוגה, ריפוי והתפתחות אישית.
-אנשים מכל העולם מגיעים אליו כדי לעצור, להתחבר לעצמם ולחוות דרך חיים קצת אחרת.
+      {/* ── Block 2: Why Koh Phangan — bold mosaic grid ── */}
+      <div className="px-3 md:px-5 pb-1.5 md:pb-2 bg-[#ECEEE9]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 md:gap-2 min-h-[70vh] md:h-[80vh]">
+          {/* Heading + copy card */}
+          <div className="bg-[#DCE0D8] p-6 md:p-10 flex flex-col justify-between min-h-[320px]">
+            <p className="eyebrow mb-4">Why Koh Phangan</p>
+            <div>
+              <h2 className="font-heading text-[#28302C] text-[clamp(2.5rem,6vw,5.5rem)] font-bold leading-[0.88] tracking-tight mb-6">
+                למה דווקא
+                <br />
+                קופנגן?
+              </h2>
+              <p className="font-assistant text-[#28302C]/75 text-sm md:text-base leading-relaxed whitespace-pre-line max-w-xl">
+                {`קופנגן הוא אי של טבע פראי, מים בצבע טורקיז, חופים לבנים וג'ונגלים ירוקים שנפגשים עם הים.
+יש בו אנרגיה שקשה להסביר במילים — שילוב נדיר של שקט, חופש ופשטות שמאפשרים לגוף להירגע וללב להיפתח.
+מעבר לכל היופי, קופנגן הפך לבית של קהילה בינלאומית של יוגה, ריפוי והתפתחות אישית.
 במשך כמה ימים גם אנחנו ניכנס לקצב של האי, ניתן לטבע להוביל אותנו, ונאפשר לעצמנו פשוט להיות.`}
-                </p>
-              </Reveal>
+              </p>
             </div>
+          </div>
+
+          {/* Image card */}
+          <div className="relative min-h-[320px] overflow-hidden">
+            <Image
+              src={IMAGES.villaSunset}
+              alt="הוילה בשקיעה עם נוף לים"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
         </div>
       </div>
