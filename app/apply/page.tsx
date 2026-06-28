@@ -271,8 +271,9 @@ export default function ApplyPage() {
     setIsSubmitting(true);
     try {
       const body: Record<string, string> = {
-        [F.formName]: FORM_NAME,
-        [F.botField]: "",
+        access_key: "182a14a6-75ac-4e98-aea4-63f51572d597",
+        subject: "הרשמה חדשה - KPG Retreat",
+        from_name: "KPG Retreat Website",
         ...Object.fromEntries(
           Object.entries(form).map(([k, v]) => [k, v ?? ""])
         ),
@@ -280,14 +281,17 @@ export default function ApplyPage() {
         [F.vacationTypes]: vacationTypes.join(", "),
       };
 
-      const encoded = new URLSearchParams(body).toString();
-      const res = await fetch("/", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encoded,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(body),
       });
 
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || `HTTP ${res.status}`);
       setPhase("success");
     } catch {
       setError("אירעה שגיאה בשליחה — נסה שוב.");
