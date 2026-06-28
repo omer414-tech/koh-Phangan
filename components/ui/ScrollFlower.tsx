@@ -3,6 +3,10 @@
 import { useEffect, useRef } from "react";
 import { MotionValue, useMotionValueEvent } from "framer-motion";
 
+// Lifts the clip's black background into a warm mid-tone (brighter than the
+// original) while keeping the full flower visible. Sepia adds palette warmth.
+const FLOWER_FILTER = "brightness(1.25) contrast(0.72) saturate(1.1) sepia(0.18)";
+
 /**
  * Smooth scroll-scrubbed video, ported from the Veldara reference technique:
  * pre-extract the clip into ImageBitmap frames, then paint the frame that
@@ -160,10 +164,13 @@ export default function ScrollFlower({
 
   return (
     <>
-      {/* Hidden video: shown (and seeked) until canvas frames are ready */}
+      {/* Hidden video: shown (and seeked) until canvas frames are ready.
+          The filter lifts the clip's blacks into a warm mid-tone so the hero
+          reads brighter than the original while keeping the whole flower. */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover mix-blend-lighten transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+        style={{ filter: FLOWER_FILTER }}
         src={src}
         muted
         playsInline
@@ -174,7 +181,8 @@ export default function ScrollFlower({
       {/* Canvas: fades in once frames are extracted */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-0 mix-blend-lighten transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-500"
+        style={{ filter: FLOWER_FILTER }}
         aria-hidden="true"
       />
     </>
