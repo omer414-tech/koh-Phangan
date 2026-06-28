@@ -31,19 +31,20 @@ export default function Hero() {
     // Tall track gives the scroll distance for the scrub.
     <section ref={sectionRef} id="hero" aria-label="Hero" className="relative h-[260vh]">
       {/* Sticky full-screen pane stays put while you scroll the track */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#1B1611] flex flex-col">
-        {/* 3D flower — smooth canvas frame-scrub driven by scroll progress */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#F4EEE3] flex flex-col">
+        {/* 3D flower — smooth canvas frame-scrub driven by scroll progress.
+            mix-blend-lighten drops the clip's black so the flower floats on the
+            bright cream backdrop. */}
         <ScrollFlower src={HERO_VIDEO} progress={scrollYProgress} />
 
-        {/* Readability overlays */}
-        <div className="absolute inset-0 bg-[#1B1611]/25" aria-hidden="true" />
+        {/* Soft cream grounding gradient for text legibility */}
         <div
-          className="absolute inset-0 bg-gradient-to-t from-[#1B1611]/75 via-transparent to-[#1B1611]/20"
+          className="absolute inset-0 bg-gradient-to-t from-[#F4EEE3] via-transparent to-transparent"
           aria-hidden="true"
         />
 
-        {/* Subtle floating particles */}
-        <Particles color="255, 255, 255" />
+        {/* Subtle floating particles (dark dots on the light backdrop) */}
+        <Particles color="120, 110, 95" />
 
         {/* Bottom-anchored content — fades out as you scroll */}
         <motion.div
@@ -54,7 +55,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease, delay: 0.1 }}
-            className="eyebrow mb-5 !text-white/70"
+            className="eyebrow mb-5"
           >
             ALOHA YOGA ✕ SAY LESS STUDIOS
           </motion.p>
@@ -63,7 +64,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease, delay: 0.25 }}
-            className="font-poppins text-white max-w-4xl leading-[1.1] drop-shadow-[0_2px_24px_rgba(0,0,0,0.5)]"
+            className="font-poppins text-[#2E2620] max-w-4xl leading-[1.1]"
             style={{ fontSize: "clamp(2.5rem, 8vw, 6rem)", fontWeight: 600 }}
           >
             Koh Phangan{" "}
@@ -81,7 +82,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease, delay: 0.45 }}
-            className="font-assistant text-white/75 mt-6 text-base sm:text-lg tracking-wide"
+            className="font-assistant text-[#2E2620]/70 mt-6 text-base sm:text-lg tracking-wide"
           >
             8–15 באוקטובר 2026 · קופנגן, תאילנד
           </motion.p>
@@ -98,7 +99,7 @@ export default function Hero() {
             >
               להרשמה <span aria-hidden="true">←</span>
             </Link>
-            <p className="font-assistant text-white/45 text-xs tracking-[0.25em] uppercase">
+            <p className="font-assistant text-[#2E2620]/50 text-xs tracking-[0.25em] uppercase">
               24 מקומות בלבד
             </p>
           </motion.div>
@@ -116,7 +117,7 @@ export default function Hero() {
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
-            className="w-6 h-6 text-white/60 animate-bounce"
+            className="w-6 h-6 text-[#98A38C] animate-bounce"
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
           </svg>

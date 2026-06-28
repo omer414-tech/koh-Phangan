@@ -163,7 +163,7 @@ export default function ScrollFlower({
       {/* Hidden video: shown (and seeked) until canvas frames are ready */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-lighten transition-opacity duration-500"
         src={src}
         muted
         playsInline
@@ -174,7 +174,7 @@ export default function ScrollFlower({
       {/* Canvas: fades in once frames are extracted */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full opacity-0 mix-blend-lighten transition-opacity duration-500"
         aria-hidden="true"
       />
     </>
