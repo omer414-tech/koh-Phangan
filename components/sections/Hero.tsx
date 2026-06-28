@@ -1,15 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import Link from "next/link";
 import { APPLY_URL } from "@/lib/config";
 import Particles from "@/components/ui/Particles";
+import ScrollFlower from "@/components/ui/ScrollFlower";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -20,9 +16,6 @@ const HERO_VIDEO =
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const durationRef = useRef(0);
-  const reduceRef = useRef(false);
 
   // Progress across the tall section: 0 at top, 1 when fully scrolled through.
   const { scrollYProgress } = useScroll({
@@ -34,50 +27,13 @@ export default function Hero() {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.45], [1, 0]);
   const contentY = useTransform(scrollYProgress, [0, 0.45], [0, -40]);
 
-  useEffect(() => {
-    reduceRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const video = videoRef.current;
-    if (!video) return;
-
-    const onMeta = () => {
-      durationRef.current = video.duration || 0;
-      // Reduced motion: just loop-play instead of scroll-scrubbing.
-      if (reduceRef.current) {
-        video.loop = true;
-        video.play().catch(() => {});
-      }
-    };
-    video.addEventListener("loadedmetadata", onMeta);
-    if (video.readyState >= 1) onMeta();
-    return () => video.removeEventListener("loadedmetadata", onMeta);
-  }, []);
-
-  // Scrub the video's currentTime to scroll progress.
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    const video = videoRef.current;
-    const dur = durationRef.current;
-    if (!video || !dur || reduceRef.current) return;
-    const target = Math.max(0, Math.min(dur - 0.05, v * (dur - 0.05)));
-    if (Math.abs(video.currentTime - target) > 0.01) {
-      video.currentTime = target;
-    }
-  });
-
   return (
     // Tall track gives the scroll distance for the scrub.
     <section ref={sectionRef} id="hero" aria-label="Hero" className="relative h-[260vh]">
       {/* Sticky full-screen pane stays put while you scroll the track */}
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#070707] flex flex-col">
-        {/* 3D flower video — scrubbed by scroll */}
-        <video
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
-          src={HERO_VIDEO}
-          muted
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        />
+        {/* 3D flower — smooth canvas frame-scrub driven by scroll progress */}
+        <ScrollFlower src={HERO_VIDEO} progress={scrollYProgress} />
 
         {/* Readability overlays */}
         <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
