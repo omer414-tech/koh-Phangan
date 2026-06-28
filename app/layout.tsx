@@ -3,6 +3,7 @@ import { Poppins, Noto_Sans_Hebrew, Assistant } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import FloatingCTA from "@/components/ui/FloatingCTA";
+import { LanguageProvider } from "@/components/ui/LanguageProvider";
 
 // Latin headings → Poppins (Bold 700; 300 kept for the thin hero wordmark)
 const poppins = Poppins({
@@ -55,10 +56,12 @@ export default function RootLayout({
       className={`${poppins.variable} ${notoHebrew.variable} ${assistant.variable}`}
     >
       <body>
-        <SmoothScroll>
-          {children}
-          <FloatingCTA />
-        </SmoothScroll>
+        <LanguageProvider>
+          <SmoothScroll>
+            {children}
+            <FloatingCTA />
+          </SmoothScroll>
+        </LanguageProvider>
       </body>
     </html>
   );
