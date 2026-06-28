@@ -1,22 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette */
-  --color-sand: #F2ECE0;
-  --color-jungle: #2E4636;
-  --color-teak: #A86A45;
+  /* ── Palette — warm luxury-wellness, refined toward the ALIVE reference ── */
+  --color-sand: #F4EEE3;      /* page background — warm cream */
+  --color-cream: #EBE3D4;     /* soft beige section band */
+  --color-sage: #98A38C;      /* muted sage accent (eyebrows, icons) */
+  --color-espresso: #2E2620;  /* primary brown text */
+  --color-khaki: #A1906B;     /* solid tan/khaki buttons */
+  --color-khaki-dark: #8A7959;/* button hover */
+  --color-jungle: #2E4636;    /* deep green for dark sections */
+  --color-teak: #A86A45;      /* secondary warm accent */
   --color-ink: #1F1B16;
-  --color-sage: #8FA48C;
 
-  /* Font families — two families only: Frank Ruhl Libre (headings/eyebrows) + Assistant (body) */
-  --font-frank: var(--font-frank);
+  /* ── Fonts ── */
+  --font-poppins: var(--font-poppins);
+  --font-noto-hebrew: var(--font-noto-hebrew);
   --font-assistant: var(--font-assistant);
+  /* Legacy alias: any remaining `font-frank` utility now resolves to the new heading stack */
+  --font-frank: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
+  --font-heading: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
 
-  /* Spacing */
-  --spacing-section: clamp(5rem, 10vw, 9rem);
+  /* ── Spacing rhythm (generous, reference-like) ── */
+  --spacing-section: clamp(6rem, 12vw, 11rem);
 
-  /* Border radius */
-  --radius-card: 0.75rem;
+  /* ── Border radius ── */
+  --radius-card: 1rem;
 }
 
 /* Base */
@@ -29,11 +37,57 @@ html {
 }
 
 body {
-  background-color: #F2ECE0;
-  color: #1F1B16;
+  background-color: #F4EEE3;
+  color: #2E2620;
   font-family: var(--font-assistant), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Heading font: Latin→Poppins, Hebrew→Noto Sans Hebrew ExtraCondensed ──
+   font-stretch:62.5% engages the ExtraCondensed width on the Hebrew variable
+   font; Poppins ignores stretch, so Latin stays at its normal width. */
+.font-heading,
+.font-frank {
+  font-family: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
+  font-stretch: 62.5%;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Tiny uppercase, wide-tracked eyebrow label (reference style) */
+.eyebrow {
+  font-family: var(--font-poppins), var(--font-assistant), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-sage);
+}
+
+/* Solid khaki button — uppercase, letter-spaced, slight radius, darker on hover */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--color-khaki);
+  color: #F4EEE3;
+  font-family: var(--font-assistant), sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  padding: 1rem 2.25rem;
+  border-radius: 0.3rem;
+  transition: background-color 0.4s ease, transform 0.4s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-khaki-dark);
+}
+
+/* Thin divider line under eyebrows / accents */
+.rule {
+  width: 2.5rem;
+  height: 1px;
+  background-color: var(--color-khaki);
 }
 
 /* RTL-safe scrollbar */
@@ -41,16 +95,16 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F2ECE0;
+  background: #F4EEE3;
 }
 ::-webkit-scrollbar-thumb {
-  background: #8FA48C;
+  background: #98A38C;
   border-radius: 3px;
 }
 
 /* Focus visible ring */
 :focus-visible {
-  outline: 2px solid #A86A45;
+  outline: 2px solid #A1906B;
   outline-offset: 3px;
 }
 

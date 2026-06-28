@@ -10,25 +10,23 @@ const features = [
 
 export default function Villas() {
   return (
-    <section aria-label="The Villas" className="bg-[#2E4636] py-[clamp(5rem,10vw,9rem)] px-6 overflow-hidden">
+    <section aria-label="The Villas" className="bg-[#2E4636] py-section px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Header — Change 4: new eyebrow, heading, body */}
         <Reveal delay={0.1}>
-          <p className="font-frank font-light tracking-[0.3em] text-[#8FA48C] text-xs uppercase mb-4 text-center">
-            Our space
-          </p>
+          <p className="eyebrow block text-center mb-5">Our space</p>
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-frank text-[#F2ECE0] text-center mb-4 leading-tight"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)", fontWeight: 300 }}
+            className="font-heading text-[#F4EEE3] text-center mb-6 leading-[1.05]"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
             המרחב שלנו
           </h2>
         </Reveal>
         <Reveal delay={0.3}>
           <p
-            className="font-assistant text-[#F2ECE0]/70 text-center max-w-2xl mx-auto mb-16 leading-relaxed"
+            className="font-assistant text-[#F4EEE3]/70 text-center max-w-2xl mx-auto mb-16 leading-loose"
             style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)" }}
           >
             בחרנו שתי וילות בלב קופנגן — לא רק יפות, אלא כאלה שמרגישים בהן. עטופות בטבע ובנוף

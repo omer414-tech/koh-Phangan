@@ -23,15 +23,13 @@ export default function JoinUs() {
 
       <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center gap-8">
         <Reveal delay={0.1}>
-          <p className="font-frank font-light tracking-[0.3em] text-[#8FA48C] text-xs uppercase">
-            Join us
-          </p>
+          <p className="eyebrow">Join us</p>
         </Reveal>
 
         <Reveal delay={0.2}>
           <h2
-            className="font-frank text-[#F2ECE0] leading-tight"
-            style={{ fontSize: "clamp(3rem, 8vw, 6rem)", fontWeight: 300 }}
+            className="font-heading text-[#F4EEE3] leading-[1.05]"
+            style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
           >
             להרשמה
           </h2>
@@ -45,10 +43,7 @@ export default function JoinUs() {
 
         {/* Primary CTA → /apply */}
         <Reveal delay={0.4}>
-          <Link
-            href={APPLY_URL}
-            className="inline-block bg-[#A86A45] text-[#F2ECE0] font-assistant font-semibold px-12 py-4 rounded-full text-lg tracking-wide hover:bg-[#F2ECE0] hover:text-[#2E4636] transition-colors duration-500"
-          >
+          <Link href={APPLY_URL} className="btn-primary">
             להרשמה
           </Link>
         </Reveal>
@@ -60,7 +55,7 @@ export default function JoinUs() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-frank font-light italic text-sm hover:text-[#A86A45] transition-colors duration-300"
+              className="font-poppins italic text-sm hover:text-[#C9A87C] transition-colors duration-300"
             >
               {INSTAGRAM_HANDLE}
             </a>
@@ -72,13 +67,13 @@ export default function JoinUs() {
         </Reveal>
 
         <Reveal delay={0.65}>
-          <p className="font-frank font-light text-[#8FA48C]/60 tracking-widest text-sm">
+          <p className="font-poppins text-[#98A38C]/70 tracking-widest text-sm">
             Koh Phangan · {RETREAT_DATES}
           </p>
         </Reveal>
 
         <Reveal delay={0.7}>
-          <p className="font-frank font-light tracking-[0.3em] text-[#8FA48C]/30 text-xs uppercase">
+          <p className="font-poppins tracking-[0.3em] text-[#98A38C]/40 text-xs uppercase">
             ALOHA YOGA ✕ SAY LESS STUDIOS
           </p>
         </Reveal>

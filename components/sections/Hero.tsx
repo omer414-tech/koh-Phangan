@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-          className="font-frank font-light tracking-[0.35em] text-xs text-[#F2ECE0]/70 uppercase"
+          className="font-poppins tracking-[0.35em] text-xs text-[#F2ECE0]/70 uppercase"
         >
           ALOHA YOGA ✕ SAY LESS STUDIOS
         </motion.p>
@@ -45,13 +45,13 @@ export default function Hero() {
           className="flex flex-col items-center gap-1"
         >
           <h1
-            className="font-frank text-[#F2ECE0] leading-none drop-shadow-lg"
+            className="font-poppins text-[#F2ECE0] leading-none drop-shadow-lg"
             style={{ fontSize: "clamp(4rem, 14vw, 10rem)", fontWeight: 300 }}
           >
             Koh Phangan
           </h1>
           <span
-            className="font-frank text-[#F2ECE0]/90 tracking-[0.6em]"
+            className="font-poppins text-[#F2ECE0]/90 tracking-[0.6em]"
             style={{ fontSize: "clamp(0.85rem, 2.5vw, 1.5rem)", fontWeight: 300 }}
           >
             R E T R E A T
@@ -65,10 +65,10 @@ export default function Hero() {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.45 }}
           className="flex flex-col items-center gap-1"
         >
-          <p className="font-frank font-light italic text-[#F2ECE0]/80 text-lg tracking-widest">
+          <p className="font-poppins font-light italic text-[#F2ECE0]/80 text-lg tracking-widest">
             8 – 15 October 2026
           </p>
-          <p className="font-frank text-[#8FA48C] text-base tracking-widest">
+          <p className="font-assistant text-[#98A38C] text-base tracking-[0.3em]">
             קופנגן · תאילנד
           </p>
         </motion.div>
@@ -79,10 +79,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.65 }}
         >
-          <Link
-            href={APPLY_URL}
-            className="mt-4 inline-block bg-[#A86A45] text-[#F2ECE0] font-assistant font-semibold px-10 py-4 rounded-full tracking-wide hover:bg-[#F2ECE0] hover:text-[#2E4636] transition-colors duration-500 text-base"
-          >
+          <Link href={APPLY_URL} className="btn-primary mt-4">
             להרשמה
           </Link>
         </motion.div>
@@ -105,7 +102,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         aria-hidden="true"
       >
-        <span className="font-frank font-light text-[#F2ECE0]/40 text-xs tracking-widest">scroll</span>
+        <span className="font-poppins text-[#F2ECE0]/40 text-xs tracking-widest uppercase">scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}

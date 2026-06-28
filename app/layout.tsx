@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
-import { Frank_Ruhl_Libre, Assistant } from "next/font/google";
+import { Poppins, Noto_Sans_Hebrew, Assistant } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 
-const frank = Frank_Ruhl_Libre({
-  subsets: ["hebrew", "latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-frank",
+// Latin headings → Poppins (Bold 700; 300 kept for the thin hero wordmark)
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+// Hebrew headings → Noto Sans Hebrew, variable across weight + width (wdth)
+// so headings can render at ExtraCondensed width (~62.5%) via font-stretch.
+const notoHebrew = Noto_Sans_Hebrew({
+  subsets: ["hebrew"],
+  axes: ["wdth"],
+  variable: "--font-noto-hebrew",
   display: "swap",
 });
 
@@ -42,7 +52,7 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={`${frank.variable} ${assistant.variable}`}
+      className={`${poppins.variable} ${notoHebrew.variable} ${assistant.variable}`}
     >
       <body>
         <SmoothScroll>
