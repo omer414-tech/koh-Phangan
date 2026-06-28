@@ -31,14 +31,14 @@ export default function Hero() {
     // Tall track gives the scroll distance for the scrub.
     <section ref={sectionRef} id="hero" aria-label="Hero" className="relative h-[260vh]">
       {/* Sticky full-screen pane stays put while you scroll the track */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#070707] flex flex-col">
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#1B1611] flex flex-col">
         {/* 3D flower — smooth canvas frame-scrub driven by scroll progress */}
         <ScrollFlower src={HERO_VIDEO} progress={scrollYProgress} />
 
         {/* Readability overlays */}
-        <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
+        <div className="absolute inset-0 bg-[#1B1611]/25" aria-hidden="true" />
         <div
-          className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20"
+          className="absolute inset-0 bg-gradient-to-t from-[#1B1611]/75 via-transparent to-[#1B1611]/20"
           aria-hidden="true"
         />
 
