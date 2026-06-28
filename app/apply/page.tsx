@@ -19,6 +19,12 @@ const slideVariants = {
 
 const transition = { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const };
 
+// Web3Forms access key. Configurable via env (set NEXT_PUBLIC_WEB3FORMS_KEY in
+// Hostinger). Falls back to the project key so the build never breaks if unset.
+// This key is public by design (domain-restrictable, not a secret).
+const WEB3FORMS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "182a14a6-75ac-4e98-aea4-63f51572d597";
+
 // ─── Reusable field primitives ────────────────────────────────────────────────
 
 function Label({ children, required }: { children: React.ReactNode; required?: boolean }) {
@@ -271,7 +277,7 @@ export default function ApplyPage() {
     setIsSubmitting(true);
     try {
       const body: Record<string, string> = {
-        access_key: "182a14a6-75ac-4e98-aea4-63f51572d597",
+        access_key: WEB3FORMS_KEY,
         subject: "הרשמה חדשה - KPG Retreat",
         from_name: "KPG Retreat Website",
         ...Object.fromEntries(
