@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 import { MotionValue, useMotionValueEvent } from "framer-motion";
 
-// Lifts the clip's black background into a warm mid-tone (brighter than the
-// original) while keeping the full flower visible. Sepia adds palette warmth.
-const FLOWER_FILTER = "brightness(1.25) contrast(0.72) saturate(1.1) sepia(0.18)";
+// Lifts the clip's black background into a mid-tone (brighter than the
+// original) while keeping the full flower visible — cool, calm cast.
+const FLOWER_FILTER = "brightness(1.22) contrast(0.74) saturate(1.12)";
 
 /**
  * Smooth scroll-scrubbed video, ported from the Veldara reference technique:

@@ -31,7 +31,7 @@ export default function Hero() {
     // Tall track gives the scroll distance for the scrub.
     <section ref={sectionRef} id="hero" aria-label="Hero" className="relative h-[260vh]">
       {/* Sticky full-screen pane stays put while you scroll the track */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#3A352D] flex flex-col">
+      <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#2A3A33] flex flex-col">
         {/* 3D flower — smooth canvas frame-scrub driven by scroll progress.
             The clip's blacks are lifted to a warm mid-tone (in ScrollFlower) so
             the hero is brighter than the original while the flower stays visible. */}
@@ -39,7 +39,7 @@ export default function Hero() {
 
         {/* Grounding gradient for text legibility */}
         <div
-          className="absolute inset-0 bg-gradient-to-t from-[#2A251F]/85 via-transparent to-[#2A251F]/15"
+          className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/85 via-transparent to-[#1E2723]/15"
           aria-hidden="true"
         />
 
@@ -49,7 +49,7 @@ export default function Hero() {
         {/* Bottom-anchored content — fades out as you scroll */}
         <motion.div
           style={{ opacity: contentOpacity, y: contentY }}
-          className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-6 pb-24"
+          className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-6 pb-20 sm:pb-24"
         >
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -65,10 +65,20 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease, delay: 0.25 }}
             className="font-poppins uppercase text-white max-w-6xl leading-[0.92] tracking-tight drop-shadow-[0_2px_30px_rgba(0,0,0,0.45)]"
-            style={{ fontSize: "clamp(3rem, 11vw, 8rem)", fontWeight: 700 }}
+            style={{ fontSize: "clamp(3.25rem, 13vw, 8rem)", fontWeight: 700 }}
           >
             Koh Phangan
           </motion.h1>
+
+          {/* Small 'Retreat' under the headline */}
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease, delay: 0.4 }}
+            className="font-poppins uppercase text-white/75 mt-3 text-sm sm:text-base tracking-[0.55em] indent-[0.55em]"
+          >
+            Retreat
+          </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -87,7 +97,7 @@ export default function Hero() {
           >
             <Link
               href={APPLY_URL}
-              className="inline-flex items-center gap-2 bg-[#A1906B] hover:bg-[#8A7959] text-[#FBF7EF] font-assistant font-semibold rounded-lg px-8 py-3.5 text-sm tracking-wide transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-[#6E8A7F] hover:bg-[#586F66] text-[#ECEEE9] font-assistant font-semibold rounded-lg px-8 py-3.5 text-sm tracking-wide transition-colors duration-300"
             >
               להרשמה <span aria-hidden="true">←</span>
             </Link>

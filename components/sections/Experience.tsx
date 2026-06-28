@@ -32,7 +32,7 @@ const pillars = [
 
 export default function Experience() {
   return (
-    <section aria-label="The Experience" className="py-section px-6 bg-[#F4EEE3]">
+    <section aria-label="The Experience" className="py-section px-6 bg-[#ECEEE9]">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           {/* Sticky heading + images */}
@@ -42,7 +42,7 @@ export default function Experience() {
             </Reveal>
             <Reveal delay={0.2}>
               <h2
-                className="font-heading text-[#2E2620] leading-[1.05]"
+                className="font-heading text-[#28302C] leading-[1.05]"
                 style={{ fontSize: "clamp(2rem, 4vw, 3.25rem)" }}
               >
                 עוד
@@ -83,9 +83,9 @@ export default function Experience() {
           <div className="lg:col-span-7 space-y-14">
             {pillars.map((pillar, i) => (
               <Reveal key={pillar.eyebrow} delay={0.1 + i * 0.1}>
-                <div className="space-y-5 border-t border-[#98A38C]/40 pt-8">
+                <div className="space-y-5 border-t border-[#8DA293]/40 pt-8">
                   <h3
-                    className="font-heading text-[#A1906B]"
+                    className="font-heading text-[#6E8A7F]"
                     style={{ fontSize: "clamp(1rem, 1.8vw, 1.3rem)" }}
                   >
                     {pillar.eyebrow}
@@ -93,8 +93,8 @@ export default function Experience() {
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="list">
                     {pillar.items.map((item) => (
                       <li key={item} className="flex items-start gap-3">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#98A38C] shrink-0" aria-hidden="true" />
-                        <span className="font-assistant text-[#2E2620]/75 text-base leading-snug">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#8DA293] shrink-0" aria-hidden="true" />
+                        <span className="font-assistant text-[#28302C]/75 text-base leading-snug">
                           {item}
                         </span>
                       </li>

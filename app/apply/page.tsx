@@ -29,9 +29,9 @@ const WEB3FORMS_KEY =
 
 function Label({ children, required }: { children: React.ReactNode; required?: boolean }) {
   return (
-    <label className="block font-assistant text-[#1F1B16] text-base mb-2 font-semibold">
+    <label className="block font-assistant text-[#28302C] text-base mb-2 font-semibold">
       {children}
-      {required && <span className="text-[#A86A45] mr-1" aria-hidden="true">*</span>}
+      {required && <span className="text-[#6E8A7F] mr-1" aria-hidden="true">*</span>}
     </label>
   );
 }
@@ -50,7 +50,7 @@ function Input({
       onChange={(e) => onChange(e.target.value)}
       required={required}
       placeholder={placeholder}
-      className="w-full font-assistant text-[#1F1B16] bg-white border border-[#8FA48C]/40 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#A86A45] focus:border-transparent placeholder:text-[#8FA48C] transition-shadow"
+      className="w-full font-assistant text-[#28302C] bg-white border border-[#8DA293]/40 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#6E8A7F] focus:border-transparent placeholder:text-[#8DA293] transition-shadow"
       dir="rtl"
     />
   );
@@ -68,7 +68,7 @@ function Textarea({
       onChange={(e) => onChange(e.target.value)}
       rows={rows}
       placeholder={placeholder}
-      className="w-full font-assistant text-[#1F1B16] bg-white border border-[#8FA48C]/40 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#A86A45] focus:border-transparent placeholder:text-[#8FA48C] transition-shadow resize-none"
+      className="w-full font-assistant text-[#28302C] bg-white border border-[#8DA293]/40 rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-[#6E8A7F] focus:border-transparent placeholder:text-[#8DA293] transition-shadow resize-none"
       dir="rtl"
     />
   );
@@ -90,8 +90,8 @@ function RadioGroup({
           onClick={() => onChange(opt)}
           className={`font-assistant text-sm px-4 py-2 rounded-full border transition-colors duration-200 ${
             value === opt
-              ? "bg-[#2E4636] text-[#F2ECE0] border-[#2E4636]"
-              : "bg-white text-[#1F1B16] border-[#8FA48C]/40 hover:border-[#2E4636]"
+              ? "bg-[#2A3A33] text-[#ECEEE9] border-[#2A3A33]"
+              : "bg-white text-[#28302C] border-[#8DA293]/40 hover:border-[#2A3A33]"
           }`}
         >
           {opt}
@@ -119,8 +119,8 @@ function CheckboxGroup({
           onClick={() => toggle(opt)}
           className={`font-assistant text-sm px-4 py-2 rounded-full border transition-colors duration-200 ${
             value.includes(opt)
-              ? "bg-[#A86A45] text-[#F2ECE0] border-[#A86A45]"
-              : "bg-white text-[#1F1B16] border-[#8FA48C]/40 hover:border-[#A86A45]"
+              ? "bg-[#6E8A7F] text-[#ECEEE9] border-[#6E8A7F]"
+              : "bg-white text-[#28302C] border-[#8DA293]/40 hover:border-[#6E8A7F]"
           }`}
         >
           {opt}
@@ -137,7 +137,7 @@ function StarRating({
 }) {
   return (
     <div className="flex items-center justify-between gap-4">
-      <span className="font-assistant text-[#1F1B16]/80 text-sm">{label}</span>
+      <span className="font-assistant text-[#28302C]/80 text-sm">{label}</span>
       <div className="flex gap-1" role="group" aria-label={`דירוג ${label}`}>
         {[1, 2, 3, 4, 5].map((n) => (
           <button
@@ -146,7 +146,7 @@ function StarRating({
             aria-label={`${n} כוכבים`}
             onClick={() => onChange(fieldName, String(n))}
             className={`text-xl transition-colors duration-150 ${
-              Number(value) >= n ? "text-[#A86A45]" : "text-[#8FA48C]/30"
+              Number(value) >= n ? "text-[#6E8A7F]" : "text-[#8DA293]/30"
             }`}
           >
             ★
@@ -168,14 +168,14 @@ function Progress({ current, total }: { current: number; total: number }) {
   return (
     <div className="w-full space-y-2">
       <div className="flex justify-between items-center">
-        <span className="font-assistant text-[#8FA48C] text-xs">
+        <span className="font-assistant text-[#8DA293] text-xs">
           שלב {current} מתוך {total}
         </span>
-        <span className="font-assistant text-[#8FA48C] text-xs">{pct}%</span>
+        <span className="font-assistant text-[#8DA293] text-xs">{pct}%</span>
       </div>
-      <div className="w-full h-1 bg-[#8FA48C]/20 rounded-full overflow-hidden">
+      <div className="w-full h-1 bg-[#8DA293]/20 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-[#A86A45] rounded-full"
+          className="h-full bg-[#6E8A7F] rounded-full"
           initial={{ width: 0 }}
           animate={{ width: `${pct}%` }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -196,14 +196,14 @@ function NavButtons({
   return (
     <div className="space-y-4 pt-4">
       {error && (
-        <p className="font-assistant text-[#A86A45] text-sm text-center">{error}</p>
+        <p className="font-assistant text-[#6E8A7F] text-sm text-center">{error}</p>
       )}
       <div className="flex gap-3 justify-between">
         {!isFirst && (
           <button
             type="button"
             onClick={onBack}
-            className="font-assistant text-[#2E4636] text-sm px-6 py-3 rounded-full border border-[#2E4636]/30 hover:border-[#2E4636] transition-colors duration-200"
+            className="font-assistant text-[#2A3A33] text-sm px-6 py-3 rounded-full border border-[#2A3A33]/30 hover:border-[#2A3A33] transition-colors duration-200"
           >
             ← חזרה
           </button>
@@ -212,7 +212,7 @@ function NavButtons({
           type="button"
           onClick={onNext}
           disabled={isSubmitting}
-          className="font-assistant font-semibold text-[#F2ECE0] bg-[#2E4636] text-sm px-8 py-3 rounded-full hover:bg-[#A86A45] transition-colors duration-300 disabled:opacity-60 mr-auto"
+          className="font-assistant font-semibold text-[#ECEEE9] bg-[#2A3A33] text-sm px-8 py-3 rounded-full hover:bg-[#6E8A7F] transition-colors duration-300 disabled:opacity-60 mr-auto"
         >
           {isSubmitting ? "שולח..." : isLast ? "שליחה" : "המשך"}
         </button>
@@ -322,28 +322,28 @@ export default function ApplyPage() {
           transition={transition}
           className="text-center space-y-8"
         >
-          <p className="font-frank font-light tracking-[0.3em] text-[#8FA48C] text-xs uppercase">
+          <p className="font-frank font-light tracking-[0.3em] text-[#8DA293] text-xs uppercase">
             Application Form
           </p>
           <h1
-            className="font-frank text-[#2E4636] leading-tight"
+            className="font-frank text-[#2A3A33] leading-tight"
             style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 400 }}
           >
             ברוכים הבאים ל־Koh Phangan Retreat
           </h1>
-          <p className="font-assistant text-[#1F1B16]/75 leading-relaxed max-w-md mx-auto"
+          <p className="font-assistant text-[#28302C]/75 leading-relaxed max-w-md mx-auto"
             style={{ fontSize: "clamp(0.95rem, 1.3vw, 1.1rem)" }}>
             אנחנו שמחים שבחרתם להצטרף למסע הזה. השאלון יעזור לנו להכיר אתכם טוב יותר
             ולבנות עבורכם את החוויה המדויקת ביותר. משך מילוי השאלון כ־10 דקות.
           </p>
           <button
             onClick={() => setPhase("form")}
-            className="inline-block bg-[#2E4636] text-[#F2ECE0] font-assistant font-semibold px-10 py-4 rounded-full hover:bg-[#A86A45] transition-colors duration-400 text-base"
+            className="inline-block bg-[#2A3A33] text-[#ECEEE9] font-assistant font-semibold px-10 py-4 rounded-full hover:bg-[#6E8A7F] transition-colors duration-400 text-base"
           >
             בואו נתחיל
           </button>
           <div className="pt-2">
-            <Link href="/" className="font-assistant text-[#8FA48C] text-sm hover:text-[#A86A45] transition-colors">
+            <Link href="/" className="font-assistant text-[#8DA293] text-sm hover:text-[#6E8A7F] transition-colors">
               ← חזרה לאתר
             </Link>
           </div>
@@ -365,20 +365,20 @@ export default function ApplyPage() {
         >
           <span className="block text-5xl" aria-hidden="true">🌴</span>
           <h2
-            className="font-frank text-[#2E4636]"
+            className="font-frank text-[#2A3A33]"
             style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 400 }}
           >
             תודה!
           </h2>
-          <p className="font-assistant text-[#1F1B16]/75 leading-relaxed max-w-sm mx-auto text-base">
+          <p className="font-assistant text-[#28302C]/75 leading-relaxed max-w-sm mx-auto text-base">
             הבקשה שלך התקבלה. בימים הקרובים ניצור איתך קשר להמשך תהליך ההרשמה.
           </p>
-          <p className="font-frank font-light italic text-[#8FA48C] text-lg">
+          <p className="font-frank font-light italic text-[#8DA293] text-lg">
             מחכים לפגוש אותך בקופנגן 🌴
           </p>
           <Link
             href="/"
-            className="inline-block mt-4 font-assistant text-sm text-[#2E4636] border border-[#2E4636]/30 px-6 py-2 rounded-full hover:border-[#2E4636] transition-colors"
+            className="inline-block mt-4 font-assistant text-sm text-[#2A3A33] border border-[#2A3A33]/30 px-6 py-2 rounded-full hover:border-[#2A3A33] transition-colors"
           >
             חזרה לאתר
           </Link>
@@ -393,10 +393,10 @@ export default function ApplyPage() {
     <PageShell>
       <div className="w-full max-w-xl mx-auto space-y-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="font-assistant text-[#8FA48C] text-xs hover:text-[#A86A45] transition-colors">
+          <Link href="/" className="font-assistant text-[#8DA293] text-xs hover:text-[#6E8A7F] transition-colors">
             ← חזרה לאתר
           </Link>
-          <p className="font-frank font-light tracking-[0.3em] text-[#8FA48C] text-xs uppercase">
+          <p className="font-frank font-light tracking-[0.3em] text-[#8DA293] text-xs uppercase">
             ריטריט קופנגן
           </p>
         </div>
@@ -449,7 +449,7 @@ export default function ApplyPage() {
 function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <div
-      className="min-h-screen bg-[#F2ECE0] flex flex-col items-center justify-center px-6 py-16"
+      className="min-h-screen bg-[#ECEEE9] flex flex-col items-center justify-center px-6 py-16"
       dir="rtl"
     >
       {children}
@@ -462,7 +462,7 @@ function PageShell({ children }: { children: React.ReactNode }) {
 function StepHeading({ children }: { children: React.ReactNode }) {
   return (
     <h2
-      className="font-frank text-[#2E4636] leading-tight mb-6"
+      className="font-frank text-[#2A3A33] leading-tight mb-6"
       style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 400 }}
     >
       {children}
@@ -545,7 +545,7 @@ function Step2({ get, set }: { get: (f: string) => string; set: (f: string, v: s
         <Label>קופת חולים</Label>
         <Input name={F.healthFund} value={get(F.healthFund)} onChange={(v) => set(F.healthFund, v)} placeholder="מכבי / כללית / מאוחדת / לאומית" />
       </FieldGroup>
-      <p className="font-frank font-light text-[#8FA48C] text-sm tracking-wide">איש קשר למקרה חירום</p>
+      <p className="font-frank font-light text-[#8DA293] text-sm tracking-wide">איש קשר למקרה חירום</p>
       <FieldGroup>
         <Label>שם</Label>
         <Input name={F.emergencyName} value={get(F.emergencyName)} onChange={(v) => set(F.emergencyName, v)} />
@@ -734,7 +734,7 @@ function Step7({
       </FieldGroup>
       <div className="space-y-4">
         <Label>כמה חשוב לך</Label>
-        <div className="space-y-3 bg-white/60 rounded-xl p-5 border border-[#8FA48C]/20">
+        <div className="space-y-3 bg-white/60 rounded-xl p-5 border border-[#8DA293]/20">
           {RATINGS.map(({ label, field }) => (
             <StarRating key={field} label={label} fieldName={field} value={get(field)} onChange={set} />
           ))}

@@ -2,15 +2,15 @@
 
 @theme {
   /* ── Palette — warm luxury-wellness, refined toward the ALIVE reference ── */
-  --color-sand: #F4EEE3;      /* page background — warm cream */
-  --color-cream: #EBE3D4;     /* soft beige section band */
-  --color-sage: #98A38C;      /* muted sage accent (eyebrows, icons) */
-  --color-espresso: #2E2620;  /* primary brown text */
-  --color-khaki: #A1906B;     /* solid tan/khaki buttons */
-  --color-khaki-dark: #8A7959;/* button hover */
-  --color-jungle: #2E4636;    /* deep green for dark sections */
-  --color-teak: #A86A45;      /* secondary warm accent */
-  --color-ink: #1F1B16;
+  --color-sand: #ECEEE9;      /* page background — warm cream */
+  --color-cream: #DCE0D8;     /* soft beige section band */
+  --color-sage: #8DA293;      /* muted sage accent (eyebrows, icons) */
+  --color-espresso: #28302C;  /* primary brown text */
+  --color-khaki: #6E8A7F;     /* solid tan/khaki buttons */
+  --color-khaki-dark: #586F66;/* button hover */
+  --color-jungle: #2A3A33;    /* deep green for dark sections */
+  --color-teak: #6E8A7F;      /* secondary warm accent */
+  --color-ink: #28302C;
 
   /* ── Fonts ── */
   --font-poppins: var(--font-poppins);
@@ -37,8 +37,8 @@ html {
 }
 
 body {
-  background-color: #F4EEE3;
-  color: #2E2620;
+  background-color: #ECEEE9;
+  color: #28302C;
   font-family: var(--font-assistant), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -69,7 +69,7 @@ body {
 .btn-primary {
   display: inline-block;
   background-color: var(--color-khaki);
-  color: #F4EEE3;
+  color: #ECEEE9;
   font-family: var(--font-assistant), sans-serif;
   font-weight: 600;
   text-transform: uppercase;
@@ -95,16 +95,16 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #F4EEE3;
+  background: #ECEEE9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #98A38C;
+  background: #8DA293;
   border-radius: 3px;
 }
 
 /* Focus visible ring */
 :focus-visible {
-  outline: 2px solid #A1906B;
+  outline: 2px solid #6E8A7F;
   outline-offset: 3px;
 }
 

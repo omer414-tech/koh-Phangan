@@ -26,14 +26,14 @@ const categories = [
 
 export default function WhatsIncluded() {
   return (
-    <section aria-label="What's Included" className="bg-[#F4EEE3] py-section px-6">
+    <section aria-label="What's Included" className="bg-[#ECEEE9] py-section px-6">
       <div className="max-w-6xl mx-auto">
         <Reveal delay={0.1}>
           <p className="eyebrow mb-5">What&apos;s included</p>
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#2E2620] mb-16 leading-[1.05]"
+            className="font-heading text-[#28302C] mb-16 leading-[1.05]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
             מה כלול בריטריט
@@ -58,7 +58,7 @@ export default function WhatsIncluded() {
               <Reveal key={cat.title} delay={0.15 + ci * 0.15}>
                 <div className="space-y-5">
                   <h3
-                    className="font-heading text-[#A1906B]"
+                    className="font-heading text-[#6E8A7F]"
                     style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)" }}
                   >
                     {cat.title}
@@ -66,8 +66,8 @@ export default function WhatsIncluded() {
                   <ul className="space-y-3" role="list">
                     {cat.items.map((item) => (
                       <li key={item} className="flex items-start gap-4">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#98A38C] shrink-0" aria-hidden="true" />
-                        <span className="font-assistant text-[#2E2620]/80 leading-snug text-base">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8DA293] shrink-0" aria-hidden="true" />
+                        <span className="font-assistant text-[#28302C]/80 leading-snug text-base">
                           {item}
                         </span>
                       </li>
@@ -81,7 +81,7 @@ export default function WhatsIncluded() {
 
         <Reveal delay={0.5}>
           <p
-            className="font-poppins italic text-[#2E2620]/50 text-center"
+            className="font-poppins italic text-[#28302C]/50 text-center"
             style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}
           >
             וזו רק ההתחלה — הרבה מעבר לריטריט רגיל.

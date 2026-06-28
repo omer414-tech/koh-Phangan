@@ -45,14 +45,14 @@ const pillars = [
 
 export default function HolisticApproach() {
   return (
-    <section aria-label="Holistic Approach" className="bg-[#EBE3D4] py-section px-6">
+    <section aria-label="Holistic Approach" className="bg-[#DCE0D8] py-section px-6">
       <div className="max-w-5xl mx-auto text-center">
         <Reveal delay={0.1}>
           <p className="eyebrow block mb-5">A holistic approach</p>
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#2E2620] leading-[1.05] mb-4"
+            className="font-heading text-[#28302C] leading-[1.05] mb-4"
             style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
             גישה הוליסטית לאיזון מלא
@@ -69,7 +69,7 @@ export default function HolisticApproach() {
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#98A38C"
+                  stroke="#8DA293"
                   strokeWidth="1.1"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -78,14 +78,14 @@ export default function HolisticApproach() {
                 >
                   {p.icon}
                 </svg>
-                <p className="font-assistant text-[#2E2620]/80 text-sm leading-snug">{p.label}</p>
+                <p className="font-assistant text-[#28302C]/80 text-sm leading-snug">{p.label}</p>
               </div>
             </Reveal>
           ))}
         </div>
 
         <Reveal delay={0.5}>
-          <p className="font-poppins italic text-[#2E2620]/50 mt-16 text-lg">
+          <p className="font-poppins italic text-[#28302C]/50 mt-16 text-lg">
             כל אלמנט נבחר בקפידה — כדי שתחזרו מלאים.
           </p>
         </Reveal>

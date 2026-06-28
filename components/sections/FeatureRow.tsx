@@ -42,7 +42,7 @@ const features = [
 
 export default function FeatureRow() {
   return (
-    <section aria-label="Highlights" className="bg-[#EBE3D4] border-y border-[#2E2620]/10">
+    <section aria-label="Highlights" className="bg-[#DCE0D8] border-y border-[#28302C]/10">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6">
           {features.map((f, i) => (
@@ -51,7 +51,7 @@ export default function FeatureRow() {
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#98A38C"
+                  stroke="#8DA293"
                   strokeWidth="1.2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -60,8 +60,8 @@ export default function FeatureRow() {
                 >
                   {f.icon}
                 </svg>
-                <p className="font-heading text-[#2E2620] text-base tracking-wide">{f.label}</p>
-                <p className="font-assistant text-[#2E2620]/55 text-sm -mt-1">{f.sub}</p>
+                <p className="font-heading text-[#28302C] text-base tracking-wide">{f.label}</p>
+                <p className="font-assistant text-[#28302C]/55 text-sm -mt-1">{f.sub}</p>
               </div>
             </Reveal>
           ))}

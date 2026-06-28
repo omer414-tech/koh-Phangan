@@ -25,14 +25,14 @@ const hosts = [
 
 export default function Hosts() {
   return (
-    <section aria-label="Our Team" className="py-section px-6 bg-[#F4EEE3]">
+    <section aria-label="Our Team" className="py-section px-6 bg-[#ECEEE9]">
       <div className="max-w-5xl mx-auto">
         <Reveal delay={0.1}>
           <p className="eyebrow block text-center mb-5">Our team</p>
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#2E2620] text-center mb-16 leading-[1.05]"
+            className="font-heading text-[#28302C] text-center mb-16 leading-[1.05]"
             style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)" }}
           >
             הכירו את המארחים
@@ -44,7 +44,7 @@ export default function Hosts() {
             <Reveal key={host.name} delay={0.15 + i * 0.15} direction={i === 0 ? "right" : "left"}>
               <article className="flex flex-col items-center text-center gap-6">
                 {/* Smaller, centered portrait */}
-                <div className="relative w-full max-w-[280px] aspect-[3/4] rounded-[1rem] overflow-hidden bg-[#EBE3D4]">
+                <div className="relative w-full max-w-[280px] aspect-[3/4] rounded-[1rem] overflow-hidden bg-[#DCE0D8]">
                   <Image
                     src={host.photo}
                     alt={host.photoAlt}
@@ -57,18 +57,18 @@ export default function Hosts() {
                 <div className="space-y-3 max-w-sm">
                   <div className="flex items-baseline justify-center gap-3">
                     <h3
-                      className="font-heading text-[#2E2620]"
+                      className="font-heading text-[#28302C]"
                       style={{ fontSize: "clamp(1.4rem, 3vw, 1.9rem)" }}
                     >
                       {host.name}
                     </h3>
-                    <span className="font-poppins italic text-[#A1906B] text-sm tracking-widest">
+                    <span className="font-poppins italic text-[#6E8A7F] text-sm tracking-widest">
                       {host.role}
                     </span>
                   </div>
                   <div className="rule mx-auto" />
                   <p
-                    className="font-assistant text-[#2E2620]/75 leading-relaxed"
+                    className="font-assistant text-[#28302C]/75 leading-relaxed"
                     style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)" }}
                   >
                     {host.bio}

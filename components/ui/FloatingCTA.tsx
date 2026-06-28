@@ -24,7 +24,7 @@ export default function FloatingCTA() {
       <Link
         href={APPLY_URL}
         aria-label="להרשמה"
-        className="block bg-[#A1906B] text-[#F4EEE3] font-assistant font-semibold text-sm px-5 py-3 rounded-full shadow-lg hover:bg-[#2E4636] transition-colors duration-300"
+        className="block bg-[#6E8A7F] text-[#ECEEE9] font-assistant font-semibold text-sm px-5 py-3 rounded-full shadow-lg hover:bg-[#2A3A33] transition-colors duration-300"
       >
         להרשמה ←
       </Link>
