@@ -8,7 +8,7 @@ export default function Welcome() {
   return (
     <section aria-label="Welcome" className="bg-[#ECEEE9] overflow-hidden">
       {/* ── Block 1: Image hero (ARANYA-style) over the villa pool ── */}
-      <div className="px-4 sm:px-6 pt-section">
+      <div className="px-4 sm:px-6 py-section">
         <div className="max-w-7xl mx-auto">
           <div className="relative w-full h-[58vh] min-h-[400px]  overflow-hidden">
             <Image

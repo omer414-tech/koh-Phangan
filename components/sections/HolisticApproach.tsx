@@ -45,27 +45,24 @@ const pillars = [
 
 export default function HolisticApproach() {
   return (
-    <section aria-label="Holistic Approach" className="bg-[#DCE0D8] py-section px-6">
-      <div className="max-w-5xl mx-auto text-center">
+    <section aria-label="Holistic Approach" className="bg-[#DCE0D8] py-[clamp(2.25rem,4vw,3.25rem)] px-6">
+      <div className="max-w-4xl mx-auto text-center">
         <Reveal delay={0.1}>
-          <p className="eyebrow block mb-5">A holistic approach</p>
+          <p className="eyebrow block mb-3">A holistic approach</p>
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#28302C] leading-[1.05] mb-4"
-            style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
+            className="font-heading text-[#28302C] leading-[1.05] mb-6"
+            style={{ fontSize: "clamp(1.6rem, 4vw, 2.5rem)" }}
           >
             גישה הוליסטית לאיזון מלא
           </h2>
         </Reveal>
-        <Reveal delay={0.3}>
-          <div className="rule mx-auto mb-8" />
-        </Reveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 gap-x-6">
+        <div className="grid grid-cols-3 lg:grid-cols-6 gap-y-5 gap-x-4">
           {pillars.map((p, i) => (
-            <Reveal key={p.label} delay={0.06 * i}>
-              <div className="flex flex-col items-center gap-4">
+            <Reveal key={p.label} delay={0.05 * i}>
+              <div className="flex flex-col items-center gap-2">
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -73,22 +70,16 @@ export default function HolisticApproach() {
                   strokeWidth="1.1"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-9 h-9"
+                  className="w-7 h-7"
                   aria-hidden="true"
                 >
                   {p.icon}
                 </svg>
-                <p className="font-assistant text-[#28302C]/80 text-sm leading-snug">{p.label}</p>
+                <p className="font-assistant text-[#28302C]/80 text-xs leading-snug">{p.label}</p>
               </div>
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={0.5}>
-          <p className="font-poppins italic text-[#28302C]/50 mt-16 text-lg">
-            כל אלמנט נבחר בקפידה — כדי שתחזרו מלאים.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

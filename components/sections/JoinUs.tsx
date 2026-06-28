@@ -29,9 +29,9 @@ export default function JoinUs() {
         <Reveal delay={0.2}>
           <h2
             className="font-heading text-[#ECEEE9] leading-[1.05]"
-            style={{ fontSize: "clamp(3rem, 8vw, 6rem)" }}
+            style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
           >
-            להרשמה
+            המסע שלך מתחיל כאן
           </h2>
         </Reveal>
 

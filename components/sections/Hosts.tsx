@@ -18,8 +18,8 @@ const hosts = [
     bio: "יזם, מייסד מותג האופנה Say Less Studios ואוהב מושבע של קופנגן. אחרי שנים של ביקורים ומגורים באי, מכיר לעומק את המקומות והחוויות שהופכים אותו לייחודי. החזון: חופש, התפתחות, חיבור אנושי ואיכות חיים.",
     photo: IMAGES.omer,
     photoAlt: "עומר — מייסד Say Less Studios",
-    // Omer: show the FULL figure, never crop
-    fit: "object-contain object-bottom",
+    // Fill the frame, centered
+    fit: "object-cover object-center",
   },
 ];
 

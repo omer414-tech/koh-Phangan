@@ -12,7 +12,7 @@ import { IMAGES } from "@/lib/images";
 import { APPLY_URL } from "@/lib/config";
 import { useLang } from "@/components/ui/LanguageProvider";
 
-const BG = IMAGES.villaPool;
+const BG = IMAGES.villaPoolGolden; // villa pool sunset
 const STRIP_WORDS = ["Breathe", "Relax", "Renew"];
 
 export default function MosaicIntro() {
@@ -56,39 +56,35 @@ export default function MosaicIntro() {
         </MaskedCard>
       ))}
 
-      {/* Main row: green panel (heading) + image slice */}
-      <div className="flex-1 min-h-0 flex flex-col md:flex-row gap-1 md:gap-1.5">
-        {/* Green gradient panel — heading lives here only, never over the photo */}
-        <div className="md:w-[38%] shrink-0 bg-gradient-to-br from-[#8DA293] via-[#A7B8AC] to-[#DCE0D8] flex items-end p-6 md:p-8">
-          <h2 className="font-heading text-[#28302C] text-[clamp(2.5rem,9vw,7rem)] font-bold leading-[0.82] tracking-tight whitespace-pre-line">
-            {t({ he: "ברוכים\nהבאים", en: "Welcome\nin" })}
-          </h2>
-        </div>
+      {/* Main image with the heading overlaid (readable) */}
+      <MaskedCard
+        bgImage={BG}
+        position={positions[3]}
+        imageWidth={imageWidth}
+        focalX={focalX}
+        cardRef={setRef(3)}
+        className="w-full flex-1 min-h-0 overflow-hidden relative"
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/80 via-[#1E2723]/15 to-[#1E2723]/25" aria-hidden="true" />
 
-        {/* Image slice */}
-        <MaskedCard
-          bgImage={BG}
-          position={positions[3]}
-          imageWidth={imageWidth}
-          focalX={focalX}
-          cardRef={setRef(3)}
-          className="flex-1 min-h-0 overflow-hidden relative"
+        <p className="absolute top-4 start-4 md:top-7 md:start-7 text-[#ECEEE9] text-xs md:text-sm font-semibold leading-4 md:leading-5 max-w-[200px] md:max-w-[300px] z-10">
+          {t({
+            he: "חוויה שלמה שמחברת התפתחות אישית, תנועה, חופש וקהילה — בלב קופנגן.",
+            en: "A complete experience blending growth, movement, freedom and community — in the heart of Koh Phangan.",
+          })}
+        </p>
+
+        <h2 className="absolute bottom-5 start-3 md:bottom-8 md:start-6 z-10 font-heading text-[#ECEEE9] text-[clamp(3rem,11vw,11rem)] font-bold leading-[0.79] tracking-tight whitespace-pre-line drop-shadow-[0_2px_24px_rgba(0,0,0,0.5)]">
+          {t({ he: "ברוכים\nהבאים", en: "Welcome\nin" })}
+        </h2>
+
+        <Link
+          href={APPLY_URL}
+          className="absolute bottom-6 end-4 md:bottom-9 md:end-8 z-10 text-[#ECEEE9] text-xs md:text-sm font-semibold underline-offset-4 hover:underline"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/55 via-transparent to-transparent" aria-hidden="true" />
-          <p className="absolute top-4 start-4 md:top-7 md:start-7 text-[#ECEEE9] text-xs md:text-sm font-semibold leading-4 md:leading-5 max-w-[200px] md:max-w-[300px] z-10">
-            {t({
-              he: "חוויה שלמה שמחברת התפתחות אישית, תנועה, חופש וקהילה — בלב קופנגן.",
-              en: "A complete experience blending growth, movement, freedom and community — in the heart of Koh Phangan.",
-            })}
-          </p>
-          <Link
-            href={APPLY_URL}
-            className="absolute bottom-5 end-4 md:bottom-7 md:end-7 z-10 text-[#ECEEE9] text-xs md:text-sm font-semibold underline-offset-4 hover:underline"
-          >
-            {t({ he: "להרשמה ←", en: "Apply ←" })}
-          </Link>
-        </MaskedCard>
-      </div>
+          {t({ he: "להרשמה ←", en: "Apply ←" })}
+        </Link>
+      </MaskedCard>
     </section>
   );
 }

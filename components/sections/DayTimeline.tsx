@@ -24,20 +24,20 @@ const schedule: Item[] = [
   },
   {
     time: "11:30",
-    title: "סדנה ראשונה — תנועה וכושר",
+    title: "תנועה וכושר",
     desc: "מוי טאי, קרוספיט או אימון פונקציונלי.",
     workshop: true,
   },
   { time: "13:30", title: "זמן חופשי", desc: "בריכת אינפיניטי, ים ומנוחה." },
   {
     time: "15:30",
-    title: "סדנה שנייה — וולנס וריפוי",
+    title: "וולנס וריפוי",
     desc: "חשיפה לקור, סאונד הילינג או עבודת גוף.",
     workshop: true,
   },
   {
     time: "17:30",
-    title: "סדנה שלישית — מעגל ונשימה",
+    title: "מעגל ונשימה",
     desc: "מעגל שיח, טקס קקאו ועבודת נשימה לשקיעה.",
     workshop: true,
   },
@@ -52,7 +52,7 @@ function Row({ item, index }: { item: Item; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 3) * 0.05 }}
-      className="relative flex items-start gap-6 pb-8 last:pb-0"
+      className="relative flex items-start gap-6 pb-4 last:pb-0"
     >
       {/* Activity */}
       <div className="flex-1 text-start order-2">
@@ -95,7 +95,7 @@ export default function DayTimeline() {
   const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section aria-label="A Day in the Retreat" className="py-section px-6 bg-[#DCE0D8]">
+    <section aria-label="A Day in the Retreat" className="py-[clamp(2.25rem,4vw,3.25rem)] px-6 bg-[#DCE0D8]">
       <div className="max-w-3xl mx-auto">
         <motion.p
           initial={{ opacity: 0, y: 16 }}

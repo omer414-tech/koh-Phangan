@@ -5,14 +5,23 @@ import Link from "next/link";
 import { IMAGES } from "@/lib/images";
 import { APPLY_URL } from "@/lib/config";
 import { useLang } from "@/components/ui/LanguageProvider";
+import Carousel, { Slide } from "@/components/ui/Carousel";
 
 const BG = IMAGES.villaSofa;
 
 const services = [
-  { he: "יוגה ומדיטציה", en: "Yoga & Meditation", num: "01", active: true },
-  { he: "סדנאות ווולנס", en: "Workshops & Wellness", num: "02", active: false },
-  { he: "שף פרטי", en: "Private Chef", num: "03", active: false },
-  { he: "קהילה וחופש", en: "Community & Freedom", num: "04", active: false },
+  { he: "יוגה\nומדיטציה", en: "Yoga &\nMeditation", num: "01", active: true },
+  { he: "סדנאות\nווולנס", en: "Workshops\n& Wellness", num: "02", active: false },
+  { he: "שף\nפרטי", en: "Private\nChef", num: "03", active: false },
+  { he: "קהילה\nוחופש", en: "Community\n& Freedom", num: "04", active: false },
+];
+
+const gallery: Slide[] = [
+  { src: IMAGES.villaPool, alt: "בריכת אינפיניטי של הוילה עם נוף פתוח לים" },
+  { src: IMAGES.villaInterior, alt: "הסלון הפתוח של הוילה" },
+  { src: IMAGES.villaView, alt: "הנוף מהוילה אל הים" },
+  { src: IMAGES.villaPool2, alt: "בריכת הוילה השנייה" },
+  { src: IMAGES.villaPoolGolden, alt: "בריכת הוילה בשעת הזהב" },
 ];
 
 export default function MosaicSpace() {
@@ -23,7 +32,7 @@ export default function MosaicSpace() {
     <section
       id="our-space"
       aria-label="Our Space"
-      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#ECEEE9]"
+      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#ECEEE9] flex flex-col gap-1.5 md:gap-2"
     >
       {/* One large image filling the whole area */}
       <div className="relative w-full h-[70vh] min-h-[460px] overflow-hidden">
@@ -54,24 +63,24 @@ export default function MosaicSpace() {
           {t({ he: "להרשמה", en: "Apply" })}
         </Link>
 
-        {/* Services row */}
+        {/* Four squares — original layout, more transparent */}
         <div className="absolute inset-x-3 bottom-3 md:inset-x-5 md:bottom-5 z-10 grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-2">
           {services.map((svc) => (
             <div
               key={svc.he}
-              className={`p-3 md:p-5 flex items-center justify-between gap-2 ${
-                svc.active ? "bg-[#ECEEE9]/90 backdrop-blur-md" : "bg-white/15 backdrop-blur-xl"
+              className={`p-3 md:p-5 flex flex-col justify-between aspect-square md:aspect-auto md:h-32 ${
+                svc.active ? "bg-[#ECEEE9]/70 backdrop-blur-md" : "bg-white/10 backdrop-blur-xl"
               }`}
             >
               <h3
-                className={`font-heading text-sm md:text-xl font-bold leading-tight ${
+                className={`font-heading text-base md:text-2xl font-bold leading-[1.05] whitespace-pre-line ${
                   svc.active ? "text-[#28302C]" : "text-[#ECEEE9]"
                 }`}
               >
                 {t(svc)}
               </h3>
               <span
-                className={`shrink-0 w-7 h-7 md:w-10 md:h-10 rounded-full border flex items-center justify-center text-[10px] md:text-xs font-semibold ${
+                className={`self-end w-7 h-7 md:w-10 md:h-10 rounded-full border flex items-center justify-center text-[10px] md:text-xs font-semibold ${
                   svc.active ? "border-[#28302C] text-[#28302C]" : "border-[#ECEEE9] text-[#ECEEE9]"
                 }`}
               >
@@ -81,6 +90,9 @@ export default function MosaicSpace() {
           ))}
         </div>
       </div>
+
+      {/* Interactive villa-photo carousel */}
+      <Carousel slides={gallery} />
     </section>
   );
 }
