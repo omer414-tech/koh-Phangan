@@ -10,12 +10,12 @@ export default function GoodToKnow() {
   return (
     <section
       aria-label="Good to Know"
-      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#ECEEE9] flex flex-col gap-1.5 md:gap-2"
+      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-black flex flex-col gap-1.5 md:gap-2"
     >
       {/* Heading band */}
-      <div className="bg-[#DCE0D8] p-6 md:p-9">
+      <div className="bg-[#212121] p-6 md:p-9">
         <p className="eyebrow mb-1">Good to know</p>
-        <h2 className="font-heading text-[#28302C] text-[clamp(2rem,5vw,4rem)] font-bold leading-[0.9]">
+        <h2 className="font-heading text-[#E1E0CC] text-[clamp(2rem,5vw,4rem)] font-bold leading-[0.9]">
           חשוב לדעת
         </h2>
       </div>
@@ -24,13 +24,13 @@ export default function GoodToKnow() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 md:gap-2">
         {/* Logistics */}
         <Reveal>
-          <div className="bg-[#ECEEE9] border border-[#8DA293]/30 p-6 md:p-7 h-full">
-            <h3 className="font-heading text-[#6E8A7F] text-lg md:text-xl font-bold mb-3">לוגיסטיקה</h3>
+          <div className="bg-black border border-[#DEDBC8]/30 p-6 md:p-7 h-full">
+            <h3 className="font-heading text-[#DEDBC8] text-lg md:text-xl font-bold mb-3">לוגיסטיקה</h3>
             <ul className="space-y-2.5" role="list">
               {logistics.map((item) => (
                 <li key={item} className="flex items-start gap-3">
-                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#8DA293] shrink-0" aria-hidden="true" />
-                  <span className="font-assistant text-[#28302C]/80 text-sm md:text-base leading-snug">{item}</span>
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#DEDBC8] shrink-0" aria-hidden="true" />
+                  <span className="font-assistant text-[#E1E0CC]/80 text-sm md:text-base leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
@@ -39,9 +39,9 @@ export default function GoodToKnow() {
 
         {/* Flights */}
         <Reveal delay={0.1}>
-          <div className="bg-[#DCE0D8] p-6 md:p-7 h-full">
-            <h3 className="font-heading text-[#28302C] text-lg md:text-xl font-bold mb-3">טיסות והגעה</h3>
-            <p className="font-assistant text-[#28302C]/75 text-sm md:text-base leading-relaxed">
+          <div className="bg-[#212121] p-6 md:p-7 h-full">
+            <h3 className="font-heading text-[#E1E0CC] text-lg md:text-xl font-bold mb-3">טיסות והגעה</h3>
+            <p className="font-assistant text-[#E1E0CC]/75 text-sm md:text-base leading-relaxed">
               נספק המלצות לטיסות מישראל לתאילנד. ניתן להזמין באופן עצמאי או להצטרף לאחת מהטיסות המומלצות.
             </p>
           </div>
@@ -49,8 +49,8 @@ export default function GoodToKnow() {
 
         {/* Important */}
         <Reveal delay={0.2}>
-          <div className="bg-[#2A3A33] p-6 md:p-7 h-full">
-            <h3 className="font-heading text-[#A7B8AC] text-lg md:text-xl font-bold mb-3">חשוב</h3>
+          <div className="bg-[#161616] p-6 md:p-7 h-full">
+            <h3 className="font-heading text-[#DEDBC8] text-lg md:text-xl font-bold mb-3">חשוב</h3>
             <p className="font-assistant text-[#ECEEE9]/85 text-sm md:text-base leading-relaxed">
               הזמינו את טיסת הפנים מבנגקוק לקוסמוי <strong className="text-[#ECEEE9]">מוקדם ככל האפשר</strong> —
               זהו קו מבוקש מאוד, והמקומות נוטים להיגמר חודשים מראש.

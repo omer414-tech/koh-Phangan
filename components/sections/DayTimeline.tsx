@@ -19,14 +19,14 @@ export default function DayTimeline() {
   return (
     <section
       aria-label="A Day in the Retreat"
-      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#DCE0D8] flex flex-col gap-1.5 md:gap-2"
+      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#212121] flex flex-col gap-1.5 md:gap-2"
     >
       {/* Heading band */}
-      <div className="bg-[#2A3A33] p-6 md:p-9 flex items-end justify-between flex-wrap gap-3">
+      <div className="bg-[#161616] p-6 md:p-9 flex items-end justify-between flex-wrap gap-3">
         <h2 className="font-heading text-[#ECEEE9] text-[clamp(2rem,5vw,4rem)] font-bold leading-[0.9]">
           יום בריטריט לדוגמה
         </h2>
-        <p className="font-assistant text-[#A7B8AC] text-sm md:text-base">
+        <p className="font-assistant text-[#DEDBC8] text-sm md:text-base">
           התוכנית משתנה מיום ליום — וזה חלק מהקסם.
         </p>
       </div>
@@ -37,26 +37,26 @@ export default function DayTimeline() {
           <Reveal key={item.time} delay={0.03 * i}>
             <div
               className={`p-4 md:p-5 h-full flex flex-col gap-1 ${
-                item.highlight ? "bg-[#6E8A7F]" : "bg-[#ECEEE9]"
+                item.highlight ? "bg-[#DEDBC8]" : "bg-black"
               }`}
             >
               <span
                 className={`font-poppins tabular-nums text-sm tracking-wider ${
-                  item.highlight ? "text-[#ECEEE9]" : "text-[#6E8A7F]"
+                  item.highlight ? "text-[#161616]" : "text-[#DEDBC8]"
                 }`}
               >
                 {item.time}
               </span>
               <h3
                 className={`font-heading text-base md:text-xl font-bold leading-tight ${
-                  item.highlight ? "text-[#ECEEE9]" : "text-[#28302C]"
+                  item.highlight ? "text-[#161616]" : "text-[#E1E0CC]"
                 }`}
               >
                 {item.title}
               </h3>
               <p
                 className={`font-assistant text-xs md:text-sm leading-snug ${
-                  item.highlight ? "text-[#ECEEE9]/85" : "text-[#28302C]/60"
+                  item.highlight ? "text-[#161616]/80" : "text-[#E1E0CC]/60"
                 }`}
               >
                 {item.desc}

@@ -26,12 +26,12 @@ export default function Hosts() {
     <section
       id="team"
       aria-label="Our Team"
-      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#ECEEE9]"
+      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-black"
     >
       {/* Heading */}
       <div className="px-2 md:px-3 mb-3 md:mb-4">
         <p className="eyebrow mb-2">Our team</p>
-        <h2 className="font-heading text-[#28302C] text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[0.95]">
+        <h2 className="font-heading text-[#E1E0CC] text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[0.95]">
           הכירו את המארחים
         </h2>
       </div>
@@ -48,20 +48,20 @@ export default function Hosts() {
                 className={host.fit}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/85 via-transparent to-transparent" aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/85 via-transparent to-transparent" aria-hidden="true" />
 
               {/* Name + role */}
               <div className="absolute top-5 start-5 md:top-7 md:start-7 z-10">
                 <h3 className="font-heading text-[#ECEEE9] text-3xl md:text-5xl font-bold leading-none">
                   {host.name}
                 </h3>
-                <span className="font-poppins italic text-[#A7B8AC] text-sm tracking-widest">
+                <span className="font-poppins italic text-[#DEDBC8] text-sm tracking-widest">
                   {host.role}
                 </span>
               </div>
 
               {/* Bio in a glass card */}
-              <div className="absolute inset-x-3 bottom-3 md:inset-x-5 md:bottom-5 z-10 bg-[#ECEEE9]/15 backdrop-blur-md p-4 md:p-5">
+              <div className="absolute inset-x-3 bottom-3 md:inset-x-5 md:bottom-5 z-10 bg-black/15 backdrop-blur-md p-4 md:p-5">
                 <p className="font-assistant text-[#ECEEE9] text-sm md:text-base leading-snug">
                   {host.bio}
                 </p>

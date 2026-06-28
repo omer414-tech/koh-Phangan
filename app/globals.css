@@ -19,6 +19,9 @@
   /* Legacy alias: any remaining `font-frank` utility now resolves to the new heading stack */
   --font-frank: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
   --font-heading: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
+  /* Prisma fonts */
+  --font-almarai: var(--font-almarai), var(--font-assistant), sans-serif;
+  --font-instrument: var(--font-instrument), serif;
 
   /* ── Spacing rhythm (compact) ── */
   --spacing-section: clamp(3rem, 6vw, 5.5rem);
@@ -112,6 +115,20 @@ body {
 :focus-visible {
   outline: 2px solid #6E8A7F;
   outline-offset: 3px;
+}
+
+/* ── Prisma design helpers ── */
+.font-serif-italic {
+  font-family: var(--font-instrument), serif;
+  font-style: italic;
+}
+
+/* SVG noise textures */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Reduced motion: disable all animations */
