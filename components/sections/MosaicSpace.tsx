@@ -6,8 +6,7 @@ import { IMAGES } from "@/lib/images";
 import { APPLY_URL } from "@/lib/config";
 import { useLang } from "@/components/ui/LanguageProvider";
 
-// TODO: replace with the "outdoor villa sofa" photo once added to public/images.
-const BG = IMAGES.villaTerrace;
+const BG = IMAGES.villaSofa;
 
 const services = [
   { he: "יוגה ומדיטציה", en: "Yoga & Meditation", num: "01", active: true },

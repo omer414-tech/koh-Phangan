@@ -1,25 +1,31 @@
 // Centralized image path registry.
 // To swap any photo: update the path here — one line, one place.
-// TODO: Replace placeholder paths with final high-res assets before launch.
 
 export const IMAGES = {
   // Hero & location
-  hero:        "/images/hero.jpeg",
-  beachAerial: "/images/beach-aerial.jpg",
+  hero:        "/images/villa-view.jpeg",
+  beachAerial: "/images/beach-1.jpg",
+  beach2:      "/images/beach-2.jpg",
 
   // Villas
-  villaPool:        "/images/villa-pool.jpg",
+  villaPool:        "/images/villa-pool.jpeg",
+  villaPool2:       "/images/villa-2-pool.jpeg",
   villaTerrace:     "/images/villa-terrace.jpg",
-  villaInterior:    "/images/villa-interior.jpg",
-  villaPoolGolden:  "/images/villa-pool-golden.jpg",
-  villaPoolDusk:    "/images/villa-pool-dusk.jpeg",
+  villaSofa:        "/images/outdoor-villa-sofa.jpeg",
+  villaInterior:    "/images/villa-living.jpeg",
+  villaRoom:        "/images/villa-room.jpeg",
+  villaView:        "/images/villa-view.jpeg",
+  villaPoolGolden:  "/images/villa-pool-sunset.jpeg",
+  villaPoolDusk:    "/images/villa-sunset.jpeg",
+  villaSunset:      "/images/villa-sunset.jpeg",
 
   // Hosts
-  yaeli: "/images/yaeli.jpg",
-  omer:  "/images/omer.jpg",
+  yaeli: "/images/yaeli-2.jpeg",
+  omer:  "/images/omer.png",
+  nir:   "/images/nir.jpg",
 
   // Activities & experience
-  meditationCircle: "/images/meditation-circle.jpg",
+  meditationCircle: "/images/villa-room.jpeg",
   ecstaticDance:    "/images/ecstatic-dance.jpg",
   jungleTemple:     "/images/jungle-temple.jpg",
 } as const;
