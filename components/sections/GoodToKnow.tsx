@@ -15,7 +15,7 @@ export default function GoodToKnow() {
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#28302C] mb-14 leading-[1.05]"
+            className="font-heading text-[#28302C] mb-8 leading-[1.05]"
             style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)" }}
           >
             חשוב לדעת
@@ -49,7 +49,7 @@ export default function GoodToKnow() {
           </div>
 
           <Reveal delay={0.3} direction="left">
-            <div className="bg-[#2A3A33] rounded-[1rem] p-8 lg:p-10">
+            <div className="bg-[#2A3A33]  p-8 lg:p-10">
               <div className="flex items-start gap-3 mb-5">
                 <span className="text-[#A7B8AC] text-xl font-light mt-0.5" aria-hidden="true">!</span>
                 <span className="font-heading text-[#ECEEE9] text-xl">חשוב</span>

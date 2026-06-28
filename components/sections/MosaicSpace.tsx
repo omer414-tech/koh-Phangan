@@ -1,136 +1,86 @@
 "use client";
 
-import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import {
-  MaskedCard,
-  useMaskPositions,
-  useImageWidth,
-  useIsMobile,
-} from "@/components/ui/MaskedCard";
 import { IMAGES } from "@/lib/images";
 import { APPLY_URL } from "@/lib/config";
 import { useLang } from "@/components/ui/LanguageProvider";
 
+// TODO: replace with the "outdoor villa sofa" photo once added to public/images.
 const BG = IMAGES.villaTerrace;
 
 const services = [
-  { he: "יוגה\nומדיטציה", en: "Yoga &\nMeditation", num: "01", active: true },
-  { he: "סדנאות\nווולנס", en: "Workshops\n& Wellness", num: "02", active: false },
-  { he: "שף\nפרטי", en: "Private\nChef", num: "03", active: false },
-  { he: "קהילה\nוחופש", en: "Community\n& Freedom", num: null, active: false },
+  { he: "יוגה ומדיטציה", en: "Yoga & Meditation", num: "01", active: true },
+  { he: "סדנאות ווולנס", en: "Workshops & Wellness", num: "02", active: false },
+  { he: "שף פרטי", en: "Private Chef", num: "03", active: false },
+  { he: "קהילה וחופש", en: "Community & Freedom", num: "04", active: false },
 ];
 
 export default function MosaicSpace() {
   const { lang } = useLang();
   const t = (p: { he: string; en: string }) => p[lang];
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardRefs = useRef<(HTMLElement | null)[]>([]);
-  const positions = useMaskPositions(sectionRef, cardRefs);
-  const sectionHeight = positions[0]?.sh ?? 0;
-  const imageWidth = useImageWidth(BG, sectionHeight);
-  const isMobile = useIsMobile();
-  const focalX = isMobile ? 0.65 : 0.8;
-
-  const setRef = (i: number) => (el: HTMLDivElement | null) => {
-    cardRefs.current[i] = el;
-  };
-  const maskProps = { bgImage: BG, imageWidth, focalX };
 
   return (
     <section
-      ref={sectionRef}
       id="our-space"
       aria-label="Our Space"
-      className="min-h-screen md:h-screen w-full overflow-hidden flex flex-col pt-1.5 md:pt-2 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2 bg-[#ECEEE9]"
+      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#ECEEE9]"
     >
-      <div className="flex-1 min-h-0 grid grid-cols-1 md:grid-cols-2 grid-rows-[auto_auto_auto_auto] md:grid-rows-[1fr_1fr_0.8fr] gap-1.5 md:gap-2">
-        {/* Card 0 — top-left */}
-        <MaskedCard
-          {...maskProps}
-          position={positions[0]}
-          cardRef={setRef(0)}
-          className="rounded-xl md:rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-0"
-        >
-          <div className="absolute inset-0 bg-[#1E2723]/35 md:bg-[#1E2723]/15" aria-hidden="true" />
-          <h2 className="absolute top-4 start-5 md:top-6 md:start-7 font-heading text-[#ECEEE9] text-2xl md:text-4xl font-bold z-10">
+      {/* One large image filling the whole area */}
+      <div className="relative w-full h-[70vh] min-h-[460px] overflow-hidden">
+        <Image
+          src={BG}
+          alt="טרסת הוילה עם ספות פתוחות ונוף לים"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/75 via-[#1E2723]/10 to-[#1E2723]/25" aria-hidden="true" />
+
+        {/* Heading */}
+        <div className="absolute top-5 start-5 md:top-8 md:start-9 z-10">
+          <h2 className="font-heading text-[#ECEEE9] text-3xl md:text-5xl font-bold">
             {t({ he: "המרחב שלנו", en: "Our Space" })}
           </h2>
-          <p className="absolute bottom-4 start-5 md:bottom-6 md:start-7 font-assistant text-[#ECEEE9] text-xs md:text-sm font-semibold z-10">
+          <p className="font-assistant text-[#ECEEE9]/85 text-sm md:text-base font-semibold mt-1">
             {t({ he: "שתי וילות יוקרה בלב קופנגן", en: "Two luxury villas in the heart of the island" })}
           </p>
-        </MaskedCard>
+        </div>
 
-        {/* Card 1 — top-right (2 rows) */}
-        <MaskedCard
-          {...maskProps}
-          position={positions[1]}
-          cardRef={setRef(1)}
-          className="md:row-span-2 rounded-xl md:rounded-2xl overflow-hidden relative min-h-[200px] md:min-h-0"
+        {/* CTA */}
+        <Link
+          href={APPLY_URL}
+          className="absolute top-5 end-5 md:top-8 md:end-9 z-10 px-5 py-2.5 md:px-7 md:py-3.5 bg-[#ECEEE9] text-[#28302C] text-sm md:text-base font-bold hover:scale-105 transition-transform"
         >
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/70 to-transparent" aria-hidden="true" />
-          <p className="absolute bottom-20 start-5 md:bottom-24 md:start-7 font-assistant text-[#ECEEE9] text-xs md:text-sm font-semibold leading-4 md:leading-5 z-10 max-w-[240px]">
-            {t({
-              he: "בריכות אינפיניטי, נוף פתוח לים וטבע טרופי שמחזיק אתכם בעדינות לאורך כל המסע.",
-              en: "Infinity pools, open sea views and tropical nature holding you gently throughout the journey.",
-            })}
-          </p>
-          <Link
-            href={APPLY_URL}
-            className="absolute bottom-4 end-4 md:bottom-6 md:end-6 px-5 py-3 md:px-8 md:py-5 bg-[#ECEEE9] rounded-full text-[#28302C] text-base md:text-xl font-bold z-10 hover:scale-105 transition-transform"
-          >
-            {t({ he: "להרשמה", en: "Apply" })}
-          </Link>
-        </MaskedCard>
+          {t({ he: "להרשמה", en: "Apply" })}
+        </Link>
 
-        {/* Card 2 — bottom-left */}
-        <MaskedCard
-          {...maskProps}
-          position={positions[2]}
-          cardRef={setRef(2)}
-          className="rounded-xl md:rounded-2xl overflow-hidden relative min-h-[160px] md:min-h-0"
-        >
-          <div className="absolute inset-0 bg-[#1E2723]/30 md:bg-[#1E2723]/10" aria-hidden="true" />
-          <h3 className="absolute top-4 start-5 md:top-6 md:start-7 font-heading text-[#ECEEE9] text-[clamp(3rem,7vw,6rem)] font-bold leading-[0.9] z-10 whitespace-pre-line">
-            {t({ he: "וילות\nיוקרה", en: "Luxury\nVillas" })}
-          </h3>
-        </MaskedCard>
-
-        {/* Card 3 — bottom full-width: services */}
-        <MaskedCard
-          {...maskProps}
-          position={positions[3]}
-          cardRef={setRef(3)}
-          className="col-span-1 md:col-span-2 rounded-xl md:rounded-2xl overflow-hidden relative min-h-[200px] md:min-h-0"
-        >
-          <div className="absolute inset-0 z-10 flex flex-wrap md:flex-nowrap gap-1.5 md:gap-2 p-2 md:p-3">
-            {services.map((svc) => (
-              <div
-                key={svc.he}
-                className={`flex-1 min-w-[calc(50%-4px)] md:min-w-0 rounded-xl md:rounded-2xl p-3 md:p-5 flex flex-col justify-between ${
-                  svc.active ? "bg-[#ECEEE9]/90 backdrop-blur-md" : "bg-white/20 backdrop-blur-xl"
+        {/* Services row */}
+        <div className="absolute inset-x-3 bottom-3 md:inset-x-5 md:bottom-5 z-10 grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-2">
+          {services.map((svc) => (
+            <div
+              key={svc.he}
+              className={`p-3 md:p-5 flex items-center justify-between gap-2 ${
+                svc.active ? "bg-[#ECEEE9]/90 backdrop-blur-md" : "bg-white/15 backdrop-blur-xl"
+              }`}
+            >
+              <h3
+                className={`font-heading text-sm md:text-xl font-bold leading-tight ${
+                  svc.active ? "text-[#28302C]" : "text-[#ECEEE9]"
                 }`}
               >
-                <h3
-                  className={`font-heading text-xl md:text-4xl font-bold leading-[1.05] whitespace-pre-line ${
-                    svc.active ? "text-[#28302C]" : "text-[#ECEEE9]"
-                  }`}
-                >
-                  {t(svc)}
-                </h3>
-                {svc.num && (
-                  <span
-                    className={`self-end w-8 h-8 md:w-12 md:h-12 rounded-full border flex items-center justify-center text-xs md:text-sm font-semibold ${
-                      svc.active ? "border-[#28302C] text-[#28302C]" : "border-[#ECEEE9] text-[#ECEEE9]"
-                    }`}
-                  >
-                    {svc.num}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-        </MaskedCard>
+                {t(svc)}
+              </h3>
+              <span
+                className={`shrink-0 w-7 h-7 md:w-10 md:h-10 rounded-full border flex items-center justify-center text-[10px] md:text-xs font-semibold ${
+                  svc.active ? "border-[#28302C] text-[#28302C]" : "border-[#ECEEE9] text-[#ECEEE9]"
+                }`}
+              >
+                {svc.num}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

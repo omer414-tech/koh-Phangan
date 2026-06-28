@@ -52,7 +52,7 @@ function Row({ item, index }: { item: Item; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 3) * 0.05 }}
-      className="relative flex items-start gap-6 pb-12 last:pb-0"
+      className="relative flex items-start gap-6 pb-8 last:pb-0"
     >
       {/* Activity */}
       <div className="flex-1 text-start order-2">
@@ -111,7 +111,7 @@ export default function DayTimeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="font-heading text-[#28302C] mb-16 leading-[1.05]"
+          className="font-heading text-[#28302C] mb-8 leading-[1.05]"
           style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)" }}
         >
           יום בריטריט לדוגמה

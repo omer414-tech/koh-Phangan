@@ -20,11 +20,17 @@
   --font-frank: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
   --font-heading: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
 
-  /* ── Spacing rhythm (generous, reference-like) ── */
-  --spacing-section: clamp(6rem, 12vw, 11rem);
+  /* ── Spacing rhythm (compact) ── */
+  --spacing-section: clamp(3rem, 6vw, 5.5rem);
 
-  /* ── Border radius ── */
-  --radius-card: 1rem;
+  /* ── Border radius (square images per design) ── */
+  --radius-card: 0;
+}
+
+/* Square corners on all images and their wrappers (no rounded images) */
+img,
+[data-img] {
+  border-radius: 0 !important;
 }
 
 /* Base */

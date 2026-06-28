@@ -40,7 +40,7 @@ export default function Carousel({
 
   return (
     <div
-      className="relative w-full rounded-[1.25rem] overflow-hidden bg-[#223029] group"
+      className="relative w-full  overflow-hidden bg-[#223029] group"
       style={{ height: "clamp(340px, 56vw, 620px)" }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}

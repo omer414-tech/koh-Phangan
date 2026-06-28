@@ -42,7 +42,7 @@ export default function Navbar() {
       {/* flex-row-reverse → menu on the right, logo on the left */}
       <nav className="fixed top-0 inset-x-0 z-50 flex flex-row-reverse items-center justify-between px-4 md:px-6 py-2 md:py-3 bg-[#ECEEE9]/80 backdrop-blur-md">
         {/* Logo (left) */}
-        <Link href="#hero" className="flex flex-col" aria-label="Koh Phangan Retreat">
+        <Link href="#hero" className="flex flex-col items-start text-left" aria-label="Koh Phangan Retreat">
           <span className="font-heading text-[#28302C] text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none">
             Koh
           </span>

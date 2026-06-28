@@ -13,10 +13,12 @@ import { APPLY_URL } from "@/lib/config";
 import { useLang } from "@/components/ui/LanguageProvider";
 
 const BG = IMAGES.villaPool;
+const STRIP_WORDS = ["Breathe", "Relax", "Renew"];
 
 export default function MosaicIntro() {
   const { lang } = useLang();
   const t = (p: { he: string; en: string }) => p[lang];
+
   const sectionRef = useRef<HTMLElement>(null);
   const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const positions = useMaskPositions(sectionRef, cardRefs);
@@ -34,55 +36,59 @@ export default function MosaicIntro() {
       ref={sectionRef}
       id="our-intro"
       aria-label="Welcome"
-      className="h-screen w-full overflow-hidden flex flex-col pt-24 px-3 md:px-5 pb-1.5 md:pb-2 gap-1.5 md:gap-2 bg-[#ECEEE9]"
+      className="h-screen w-full overflow-hidden flex flex-col pt-24 px-3 md:px-5 pb-1 md:pb-1.5 gap-1 md:gap-1.5 bg-[#ECEEE9]"
     >
-      {/* Feature bars — clean image slices (text removed) */}
-      {[0, 1, 2].map((i) => (
+      {/* Image strips, each with one subtle English word */}
+      {STRIP_WORDS.map((word, i) => (
         <MaskedCard
-          key={i}
+          key={word}
           bgImage={BG}
           position={positions[i]}
           imageWidth={imageWidth}
           focalX={focalX}
           cardRef={setRef(i)}
-          className="w-full h-14 md:h-20 shrink-0 rounded-xl md:rounded-2xl overflow-hidden relative"
-        />
+          className="w-full h-12 md:h-16 shrink-0 overflow-hidden relative"
+        >
+          <div className="absolute inset-0 bg-[#1E2723]/20" aria-hidden="true" />
+          <span className="relative z-10 flex items-center justify-center h-full font-assistant text-[#ECEEE9] text-xs md:text-sm font-light tracking-[0.5em] uppercase">
+            {word}
+          </span>
+        </MaskedCard>
       ))}
 
-      {/* Main card */}
-      <MaskedCard
-        bgImage={BG}
-        position={positions[3]}
-        imageWidth={imageWidth}
-        focalX={focalX}
-        cardRef={setRef(3)}
-        className="w-full flex-1 min-h-0 rounded-xl md:rounded-2xl overflow-hidden relative"
-      >
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/75 via-[#1E2723]/10 to-[#1E2723]/15" aria-hidden="true" />
-
-        <p className="absolute top-4 start-4 md:top-7 md:start-7 text-[#ECEEE9] text-xs md:text-sm font-semibold leading-4 md:leading-5 max-w-[200px] md:max-w-[320px] z-10">
-          {t({
-            he: "חוויה שלמה שמחברת התפתחות אישית, תנועה, חופש וקהילה — בלב קופנגן.",
-            en: "A complete experience blending growth, movement, freedom and community — in the heart of Koh Phangan.",
-          })}
-        </p>
-
-        <div className="absolute bottom-5 start-3 md:bottom-8 md:start-5 z-10">
-          <span className="block text-[#ECEEE9] text-xs md:text-sm font-semibold mb-1 md:mb-2">
-            {t({ he: "ריטריט יוקרה · 8–15 באוקטובר 2026", en: "Luxury retreat · 8–15 October 2026" })}
-          </span>
-          <h2 className="font-heading text-[#ECEEE9] text-[clamp(3rem,11vw,11rem)] font-bold leading-[0.79] tracking-tight whitespace-pre-line">
+      {/* Main row: green panel (heading) + image slice */}
+      <div className="flex-1 min-h-0 flex flex-col md:flex-row gap-1 md:gap-1.5">
+        {/* Green gradient panel — heading lives here only, never over the photo */}
+        <div className="md:w-[38%] shrink-0 bg-gradient-to-br from-[#8DA293] via-[#A7B8AC] to-[#DCE0D8] flex items-end p-6 md:p-8">
+          <h2 className="font-heading text-[#28302C] text-[clamp(2.5rem,9vw,7rem)] font-bold leading-[0.82] tracking-tight whitespace-pre-line">
             {t({ he: "ברוכים\nהבאים", en: "Welcome\nin" })}
           </h2>
         </div>
 
-        <Link
-          href={APPLY_URL}
-          className="absolute bottom-6 end-4 md:bottom-10 md:end-8 z-10 text-[#ECEEE9] text-xs md:text-sm font-semibold underline-offset-4 hover:underline"
+        {/* Image slice */}
+        <MaskedCard
+          bgImage={BG}
+          position={positions[3]}
+          imageWidth={imageWidth}
+          focalX={focalX}
+          cardRef={setRef(3)}
+          className="flex-1 min-h-0 overflow-hidden relative"
         >
-          {t({ he: "להרשמה ←", en: "Apply ←" })}
-        </Link>
-      </MaskedCard>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/55 via-transparent to-transparent" aria-hidden="true" />
+          <p className="absolute top-4 start-4 md:top-7 md:start-7 text-[#ECEEE9] text-xs md:text-sm font-semibold leading-4 md:leading-5 max-w-[200px] md:max-w-[300px] z-10">
+            {t({
+              he: "חוויה שלמה שמחברת התפתחות אישית, תנועה, חופש וקהילה — בלב קופנגן.",
+              en: "A complete experience blending growth, movement, freedom and community — in the heart of Koh Phangan.",
+            })}
+          </p>
+          <Link
+            href={APPLY_URL}
+            className="absolute bottom-5 end-4 md:bottom-7 md:end-7 z-10 text-[#ECEEE9] text-xs md:text-sm font-semibold underline-offset-4 hover:underline"
+          >
+            {t({ he: "להרשמה ←", en: "Apply ←" })}
+          </Link>
+        </MaskedCard>
+      </div>
     </section>
   );
 }

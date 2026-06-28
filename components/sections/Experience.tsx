@@ -34,7 +34,7 @@ export default function Experience() {
   return (
     <section aria-label="The Experience" className="py-section px-6 bg-[#ECEEE9]">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Sticky heading + images */}
           <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-6">
             <Reveal delay={0.1}>
@@ -55,7 +55,7 @@ export default function Experience() {
             </Reveal>
 
             <Reveal delay={0.4} direction="right">
-              <div className="relative w-full aspect-[4/3] rounded-[1rem] overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.4)]">
+              <div className="relative w-full aspect-[4/3]  overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.4)]">
                 <Image
                   src={IMAGES.ecstaticDance}
                   alt="מעגל אקסטטיק דאנס בג'ונגל קופנגן"
@@ -67,7 +67,7 @@ export default function Experience() {
             </Reveal>
 
             <Reveal delay={0.5} direction="right">
-              <div className="relative w-full aspect-[16/9] rounded-[1rem] overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.4)]">
+              <div className="relative w-full aspect-[16/9]  overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.4)]">
                 <Image
                   src={IMAGES.jungleTemple}
                   alt="מקום טקסי בג'ונגל קופנגן עם מבוך ענק"
@@ -80,7 +80,7 @@ export default function Experience() {
           </div>
 
           {/* Pillars */}
-          <div className="lg:col-span-7 space-y-14">
+          <div className="lg:col-span-7 space-y-8">
             {pillars.map((pillar, i) => (
               <Reveal key={pillar.eyebrow} delay={0.1 + i * 0.1}>
                 <div className="space-y-5 border-t border-[#8DA293]/40 pt-8">

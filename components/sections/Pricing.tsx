@@ -24,7 +24,7 @@ export default function Pricing() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="flex justify-center mb-14">
+          <div className="flex justify-center mb-8">
             <span className="inline-block bg-[#6E8A7F] text-[#ECEEE9] font-assistant font-semibold text-sm px-6 py-2 rounded-full tracking-widest">
               24 מקומות בלבד
             </span>
@@ -32,9 +32,9 @@ export default function Pricing() {
         </Reveal>
 
         {/* Price cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <Reveal delay={0.2} direction="right">
-            <article className="rounded-[1rem] bg-white/50 shadow-sm border border-[#8DA293]/25 p-10 flex flex-col gap-4 hover:shadow-md transition-shadow duration-300">
+            <article className=" bg-white/50 shadow-sm border border-[#8DA293]/25 p-10 flex flex-col gap-4 hover:shadow-md transition-shadow duration-300">
               <h3 className="font-heading text-[#28302C] text-2xl">חדר זוגי</h3>
               <div className="flex items-baseline gap-2">
                 <span
@@ -51,7 +51,7 @@ export default function Pricing() {
           </Reveal>
 
           <Reveal delay={0.3} direction="left">
-            <article className="rounded-[1rem] bg-[#2A3A33] p-10 flex flex-col gap-4 hover:bg-[#223029] transition-colors duration-300">
+            <article className=" bg-[#2A3A33] p-10 flex flex-col gap-4 hover:bg-[#223029] transition-colors duration-300">
               <h3 className="font-heading text-[#ECEEE9] text-2xl">חדר רביעייה</h3>
               <div className="flex items-baseline gap-2">
                 <span
@@ -70,7 +70,7 @@ export default function Pricing() {
 
         {/* Payment note */}
         <Reveal delay={0.4}>
-          <div className="bg-[#8DA293]/12 rounded-[1rem] p-8 mb-10 border border-[#8DA293]/25">
+          <div className="bg-[#8DA293]/12  p-8 mb-10 border border-[#8DA293]/25">
             <p className="font-assistant text-[#28302C]/80 text-base leading-relaxed text-center">
               מקדמה לשמירת מקום: <strong>₪2,000</strong>. יתרת התשלום לפי לוח תשלומים שיימסר לאחר ההרשמה.
               ניתן לשלם בשקלים או בדולרים.

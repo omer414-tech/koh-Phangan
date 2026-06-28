@@ -59,10 +59,10 @@ export default function HolisticApproach() {
           </h2>
         </Reveal>
         <Reveal delay={0.3}>
-          <div className="rule mx-auto mb-16" />
+          <div className="rule mx-auto mb-8" />
         </Reveal>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-8 gap-x-6">
           {pillars.map((p, i) => (
             <Reveal key={p.label} delay={0.06 * i}>
               <div className="flex flex-col items-center gap-4">

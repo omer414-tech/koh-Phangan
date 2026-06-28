@@ -10,7 +10,7 @@ export default function Welcome() {
       {/* ── Block 1: Image hero (ARANYA-style) over the villa pool ── */}
       <div className="px-4 sm:px-6 pt-section">
         <div className="max-w-7xl mx-auto">
-          <div className="relative w-full h-[80vh] min-h-[540px] rounded-[1.5rem] overflow-hidden">
+          <div className="relative w-full h-[58vh] min-h-[400px]  overflow-hidden">
             <Image
               src={IMAGES.villaPool}
               alt="בריכת אינפיניטי של הוילה עם נוף פתוח לים"
@@ -76,12 +76,12 @@ export default function Welcome() {
       {/* ── Block 2: Why Koh Phangan — image + text (reversed), beige band ── */}
       <div className="py-section px-6 bg-[#DCE0D8]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
             <Reveal className="lg:col-span-6 lg:order-1 order-2" delay={0.3} direction="right">
-              <div className="relative w-full aspect-[4/5] rounded-[1rem] overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.45)]">
+              <div className="relative w-full aspect-[4/3]  overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.45)]">
                 <Image
-                  src={IMAGES.jungleTemple}
-                  alt="ג'ונגל ירוק וטבע טרופי בקופנגן"
+                  src={IMAGES.villaPoolDusk}
+                  alt="הוילה בשקיעה עם נוף לים"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
