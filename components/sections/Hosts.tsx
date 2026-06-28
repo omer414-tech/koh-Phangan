@@ -25,7 +25,7 @@ const hosts = [
 
 export default function Hosts() {
   return (
-    <section aria-label="Our Team" className="py-section px-6 bg-[#ECEEE9]">
+    <section id="team" aria-label="Our Team" className="py-section px-6 bg-[#ECEEE9]">
       <div className="max-w-5xl mx-auto">
         <Reveal delay={0.1}>
           <p className="eyebrow block text-center mb-5">Our team</p>

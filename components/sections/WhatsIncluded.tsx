@@ -26,7 +26,7 @@ const categories = [
 
 export default function WhatsIncluded() {
   return (
-    <section aria-label="What's Included" className="bg-[#ECEEE9] py-section px-6">
+    <section id="included" aria-label="What's Included" className="bg-[#ECEEE9] py-section px-6">
       <div className="max-w-6xl mx-auto">
         <Reveal delay={0.1}>
           <p className="eyebrow mb-5">What&apos;s included</p>

@@ -1,7 +1,9 @@
+import Splash from "@/components/ui/Splash";
+import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/sections/Hero";
-import FeatureRow from "@/components/sections/FeatureRow";
+import MosaicIntro from "@/components/sections/MosaicIntro";
 import Welcome from "@/components/sections/Welcome";
-import Villas from "@/components/sections/Villas";
+import MosaicSpace from "@/components/sections/MosaicSpace";
 import Hosts from "@/components/sections/Hosts";
 import WhatsIncluded from "@/components/sections/WhatsIncluded";
 import HolisticApproach from "@/components/sections/HolisticApproach";
@@ -13,19 +15,25 @@ import JoinUs from "@/components/sections/JoinUs";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <FeatureRow />
-      <Welcome />
-      <Villas />
-      <Hosts />
-      <WhatsIncluded />
-      <HolisticApproach />
-      <Experience />
-      <DayTimeline />
-      <Pricing />
-      <GoodToKnow />
-      <JoinUs />
-    </main>
+    <div className="bg-[#ECEEE9]">
+      <Splash />
+      <Navbar />
+      <main>
+        {/* Hero — untouched */}
+        <Hero />
+        {/* Everything below uses the mosaic / bold-card design system */}
+        <MosaicIntro />
+        <Welcome />
+        <MosaicSpace />
+        <Hosts />
+        <WhatsIncluded />
+        <HolisticApproach />
+        <Experience />
+        <DayTimeline />
+        <Pricing />
+        <GoodToKnow />
+        <JoinUs />
+      </main>
+    </div>
   );
 }
