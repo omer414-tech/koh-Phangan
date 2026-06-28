@@ -3,9 +3,9 @@
 import { useEffect, useRef } from "react";
 import { MotionValue, useMotionValueEvent } from "framer-motion";
 
-// Lifts the clip's black background into a mid-tone (brighter than the
-// original) while keeping the full flower visible — cool, calm cast.
-const FLOWER_FILTER = "brightness(1.22) contrast(0.74) saturate(1.12)";
+// Keep the clip's blacks black so mix-blend-screen drops them, letting the
+// flower composite onto the beach photo behind it. Mild brighten/saturate only.
+const FLOWER_FILTER = "brightness(1.08) saturate(1.15)";
 
 /**
  * Smooth scroll-scrubbed video, ported from the Veldara reference technique:
@@ -169,7 +169,7 @@ export default function ScrollFlower({
           reads brighter than the original while keeping the whole flower. */}
       <video
         ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full object-cover mix-blend-screen transition-opacity duration-500"
         style={{ filter: FLOWER_FILTER }}
         src={src}
         muted
@@ -181,7 +181,7 @@ export default function ScrollFlower({
       {/* Canvas: fades in once frames are extracted */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-0 transition-opacity duration-500"
+        className="absolute inset-0 w-full h-full opacity-0 mix-blend-screen transition-opacity duration-500"
         style={{ filter: FLOWER_FILTER }}
         aria-hidden="true"
       />

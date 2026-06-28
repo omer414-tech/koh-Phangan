@@ -2,8 +2,10 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { APPLY_URL } from "@/lib/config";
+import { IMAGES } from "@/lib/images";
 import Particles from "@/components/ui/Particles";
 import ScrollFlower from "@/components/ui/ScrollFlower";
 
@@ -32,9 +34,21 @@ export default function Hero() {
     <section ref={sectionRef} id="hero" aria-label="Hero" className="relative h-[260vh]">
       {/* Sticky full-screen pane stays put while you scroll the track */}
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-[#2A3A33] flex flex-col">
+        {/* Beach photo behind the flower */}
+        <Image
+          src={IMAGES.beachAerial}
+          alt="נוף אוירי של חוף קופנגן עם מים טורקיזים וסלעים"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        {/* Slight darken so the flower's glow reads on top */}
+        <div className="absolute inset-0 bg-[#1E2723]/35" aria-hidden="true" />
+
         {/* 3D flower — smooth canvas frame-scrub driven by scroll progress.
-            The clip's blacks are lifted to a warm mid-tone (in ScrollFlower) so
-            the hero is brighter than the original while the flower stays visible. */}
+            mix-blend-screen drops the clip's black so the flower composites
+            onto the beach photo behind it. */}
         <ScrollFlower src={HERO_VIDEO} progress={scrollYProgress} />
 
         {/* Grounding gradient for text legibility */}
