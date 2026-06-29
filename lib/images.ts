@@ -31,6 +31,7 @@ export const IMAGES = {
   jungleTemple:     "/images/jungle-temple.jpg",
 
   // Logos
-  alohaLogo:   "/images/aloha-logo.png",
-  sayLessLogo: "/images/say-less-logo.png",
+  alohaLogo:    "/images/aloha-logo.png",
+  sayLessLogo:  "/images/say-less-logo.png",
+  alohaSlsLogo: "/images/aloha-sls-logo.png",
 } as const;

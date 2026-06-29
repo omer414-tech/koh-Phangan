@@ -43,22 +43,14 @@ export default function Navbar() {
     <>
       {/* flex-row-reverse → menu on the right, logo on the left */}
       <nav className="fixed top-0 inset-x-0 z-50 flex flex-row-reverse items-center justify-between px-4 md:px-6 py-1.5 md:py-2 bg-[#ECEEE9]/80 backdrop-blur-md">
-        {/* Logos (left) */}
-        <Link href="#hero" className="flex items-center gap-2 sm:gap-3" aria-label="Aloha Yoga · Say Less Studios">
+        {/* Logo (left) */}
+        <Link href="#hero" className="flex items-center" aria-label="Aloha Yoga · Say Less Studios">
           <Image
-            src={IMAGES.alohaLogo}
-            alt="Aloha Yoga"
-            width={200}
-            height={80}
-            className="h-6 sm:h-7 w-auto object-contain brightness-0 opacity-80"
-          />
-          <span className="w-px h-5 bg-[#28302C]/25" aria-hidden="true" />
-          <Image
-            src={IMAGES.sayLessLogo}
-            alt="Say Less Studios"
-            width={200}
-            height={80}
-            className="h-6 sm:h-7 w-auto object-contain brightness-0 opacity-80"
+            src={IMAGES.alohaSlsLogo}
+            alt="Aloha Yoga · Say Less Studios"
+            width={995}
+            height={85}
+            className="h-5 sm:h-7 w-auto object-contain brightness-0 opacity-80"
           />
         </Link>
 
