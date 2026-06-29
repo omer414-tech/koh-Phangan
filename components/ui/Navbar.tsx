@@ -46,11 +46,11 @@ export default function Navbar() {
         {/* Logo (left) */}
         <Link href="#hero" className="flex items-center" aria-label="Aloha Yoga · Say Less Studios">
           <Image
-            src={IMAGES.alohaSlsLogo}
-            alt="Aloha Yoga · Say Less Studios"
-            width={995}
-            height={85}
-            className="h-5 sm:h-7 w-auto object-contain brightness-0 opacity-80"
+            src={IMAGES.alohaLogo}
+            alt="Aloha Yoga"
+            width={200}
+            height={80}
+            className="h-6 sm:h-7 w-auto object-contain brightness-0 opacity-80"
           />
         </Link>
 

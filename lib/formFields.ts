@@ -10,9 +10,7 @@ export const F = {
   dob:        "dob",
   phone:      "phone",
   email:      "email",
-  instagram:  "instagram",
   city:       "city",
-  occupation: "occupation",
 
   // Step 2 — Medical
   foodSensitivity:       "food_sensitivity",
@@ -22,6 +20,7 @@ export const F = {
   medications:           "medications",
   physicalLimitations:   "physical_limitations",
   healthFund:            "health_fund",
+  mentalHealthDeclaration: "mental_health_declaration",
   emergencyName:         "emergency_contact_name",
   emergencyPhone:        "emergency_contact_phone",
   emergencyRelation:     "emergency_contact_relation",

@@ -52,8 +52,8 @@ export default function Experience() {
           <Reveal direction="right">
             <div className="relative w-full aspect-[4/3] overflow-hidden">
               <Image
-                src={IMAGES.ecstaticDance}
-                alt="מעגל אקסטטיק דאנס בג'ונגל קופנגן"
+                src={IMAGES.experience1}
+                alt="עוד מהריטריט בקופנגן"
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, 50vw"
@@ -63,8 +63,8 @@ export default function Experience() {
           <Reveal direction="left">
             <div className="relative w-full aspect-[4/3] overflow-hidden">
               <Image
-                src={IMAGES.jungleTemple}
-                alt="מקום טקסי בג'ונגל קופנגן עם מבוך ענק"
+                src={IMAGES.experience2}
+                alt="עוד מהריטריט בקופנגן"
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, 50vw"

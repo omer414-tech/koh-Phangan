@@ -29,6 +29,9 @@ export const IMAGES = {
   meditationCircle: "/images/villa-room.jpeg",
   ecstaticDance:    "/images/ecstatic-dance.jpg",
   jungleTemple:     "/images/jungle-temple.jpg",
+  whatsIncluded:    "/images/whats-included.png",
+  experience1:      "/images/the-experience.png",
+  experience2:      "/images/the-experience-2.png",
 
   // Logos
   alohaLogo:    "/images/aloha-logo.png",

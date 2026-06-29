@@ -11,38 +11,14 @@ type Item = {
   workshop?: boolean;
 };
 
-// Always includes the 10:00 villa breakfast with a private chef,
-// and exactly 3 workshops across the day.
 const schedule: Item[] = [
-  { time: "07:00", title: "יוגה בזריחה", desc: "פתיחת היום בתנועה רכה מול הים." },
-  { time: "08:30", title: "נשימה ומדיטציה", desc: "רגע של שקט לפני שהיום מתחיל." },
-  {
-    time: "10:00",
-    title: "ארוחת בוקר בוילה",
-    desc: "ארוחת בוקר נדיבה בהכנת שף פרטי, מול הנוף.",
-    highlight: true,
-  },
-  {
-    time: "11:30",
-    title: "תנועה וכושר",
-    desc: "מוי טאי, קרוספיט או אימון פונקציונלי.",
-    workshop: true,
-  },
-  { time: "13:30", title: "זמן חופשי", desc: "בריכת אינפיניטי, ים ומנוחה." },
-  {
-    time: "15:30",
-    title: "וולנס וריפוי",
-    desc: "חשיפה לקור, סאונד הילינג או עבודת גוף.",
-    workshop: true,
-  },
-  {
-    time: "17:30",
-    title: "מעגל ונשימה",
-    desc: "מעגל שיח, טקס קקאו ועבודת נשימה לשקיעה.",
-    workshop: true,
-  },
-  { time: "19:30", title: "ארוחת ערב קבוצתית", desc: "שולחן אחד גדול, אוכל מעולה וחברה טובה." },
-  { time: "21:00", title: "אקסטטיק דאנס / ערב חופשי", desc: "לשחרר, לרקוד, או פשוט לנוח." },
+  { time: "08:00", title: "טקס בוקר", desc: "" },
+  { time: "09:00", title: "תרגול יוגה", desc: "" },
+  { time: "10:30", title: "ארוחת בוקר בוילה", desc: "בהכנת שף פרטי, מול הנוף.", highlight: true },
+  { time: "", title: "זמן חופשי — בריכה / ים", desc: "למשך כ-3 שעות אחרי ארוחת הבוקר." },
+  { time: "16:00", title: "סדנת חשיפה לקור ונשימות", desc: "" },
+  { time: "18:00", title: "אקסטטיק דאנס", desc: "" },
+  { time: "20:30", title: "ארוחת ערב מול השקיעה", desc: "", highlight: true },
 ];
 
 function Row({ item, index }: { item: Item; index: number }) {
@@ -67,7 +43,9 @@ function Row({ item, index }: { item: Item; index: number }) {
             </span>
           )}
         </h3>
-        <p className="font-assistant text-[#28302C]/65 text-xs leading-snug">{item.desc}</p>
+        {item.desc && (
+          <p className="font-assistant text-[#28302C]/65 text-xs leading-snug">{item.desc}</p>
+        )}
       </div>
 
       {/* Time + dot (end side for RTL) */}

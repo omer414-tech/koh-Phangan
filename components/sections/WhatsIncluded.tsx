@@ -9,8 +9,8 @@ export default function WhatsIncluded() {
       heading="מה כלול בריטריט"
       subline="הרבה מעבר לריטריט רגיל."
       paragraph="כל מה שצריך כדי פשוט להיות — לינה יוקרתית, תנועה ווולנס יומיים, אוכל מעולה וקהילה. דאגנו לכל פרט, כדי שתוכלו פשוט להגיע ולהיות נוכחים."
-      image={IMAGES.villaPool}
-      imageAlt="בריכת אינפיניטי של הוילה עם נוף פתוח לים"
+      image={IMAGES.whatsIncluded}
+      imageAlt="מה כלול בריטריט קופנגן"
       details={[
         {
           label: "לינה",

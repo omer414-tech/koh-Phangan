@@ -493,16 +493,8 @@ function Step1({ get, set }: { get: (f: string) => string; set: (f: string, v: s
         <Input name={F.email} type="email" value={get(F.email)} onChange={(v) => set(F.email, v)} required placeholder="me@example.com" />
       </FieldGroup>
       <FieldGroup>
-        <Label>אינסטגרם</Label>
-        <Input name={F.instagram} value={get(F.instagram)} onChange={(v) => set(F.instagram, v)} placeholder="@username" />
-      </FieldGroup>
-      <FieldGroup>
         <Label>עיר מגורים</Label>
         <Input name={F.city} value={get(F.city)} onChange={(v) => set(F.city, v)} />
-      </FieldGroup>
-      <FieldGroup>
-        <Label>עיסוק</Label>
-        <Input name={F.occupation} value={get(F.occupation)} onChange={(v) => set(F.occupation, v)} />
       </FieldGroup>
     </div>
   );
@@ -545,6 +537,25 @@ function Step2({ get, set }: { get: (f: string) => string; set: (f: string, v: s
         <Label>קופת חולים</Label>
         <Input name={F.healthFund} value={get(F.healthFund)} onChange={(v) => set(F.healthFund, v)} placeholder="מכבי / כללית / מאוחדת / לאומית" />
       </FieldGroup>
+
+      {/* Mental-health declaration */}
+      <FieldGroup>
+        <label className="flex items-start gap-3 cursor-pointer bg-[#8DA293]/10 border border-[#8DA293]/30 rounded-lg p-4">
+          <input
+            type="checkbox"
+            name={F.mentalHealthDeclaration}
+            checked={get(F.mentalHealthDeclaration) === "אישרה"}
+            onChange={(e) => set(F.mentalHealthDeclaration, e.target.checked ? "אישרה" : "")}
+            className="mt-1 w-4 h-4 shrink-0 accent-[#6E8A7F]"
+          />
+          <span className="font-assistant text-[#1F1B16]/80 text-sm leading-relaxed">
+            אני מצהירה כי אינני סובלת (כעת) מהפרעה נפשית פעילה או מאובחנת אשר עשויה לסכן אותי או להשפיע
+            באופן מהותי על חוויית הריטריט עבורי או עבור משתתפות אחרות. אני לוקחת אחריות מלאה על מצבי
+            הנפשי ומתחייבת לשתף במידת הצורך כל מידע רלוונטי לצוות המארגן.
+          </span>
+        </label>
+      </FieldGroup>
+
       <p className="font-frank font-light text-[#8DA293] text-sm tracking-wide">איש קשר למקרה חירום</p>
       <FieldGroup>
         <Label>שם</Label>
