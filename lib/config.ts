@@ -10,7 +10,7 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${PREFILLED_M
 export const INSTAGRAM_URL = "https://instagram.com/sayless.studios";
 export const INSTAGRAM_HANDLE = "@sayless.studios";
 
-export const RETREAT_DATES = "8 – 15 October 2026";
+export const RETREAT_DATES = "8 – 16 October 2026";
 export const RETREAT_SPOTS = 24;
 
 // Every "להרשמה" CTA links here

@@ -65,15 +65,6 @@ export default function Hero() {
           style={{ opacity: contentOpacity, y: contentY }}
           className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-6 pb-20 sm:pb-24"
         >
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease, delay: 0.1 }}
-            className="eyebrow mb-5 !text-white/70"
-          >
-            ALOHA YOGA ✕ SAY LESS STUDIOS
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -84,15 +75,28 @@ export default function Hero() {
             Koh Phangan
           </motion.h1>
 
-          {/* Small 'Retreat' under the headline */}
-          <motion.p
+          {/* Brand logos under the wordmark */}
+          <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease, delay: 0.4 }}
-            className="font-poppins uppercase text-white/75 mt-3 text-sm sm:text-base tracking-[0.55em] indent-[0.55em]"
+            className="mt-2 flex items-center justify-center gap-2 sm:gap-4"
           >
-            Retreat
-          </motion.p>
+            <Image
+              src={IMAGES.alohaLogo}
+              alt="Aloha Yoga"
+              width={300}
+              height={300}
+              className="w-28 sm:w-40 h-auto object-contain"
+            />
+            <Image
+              src={IMAGES.sayLessLogo}
+              alt="Say Less Studios"
+              width={300}
+              height={300}
+              className="w-28 sm:w-40 h-auto object-contain"
+            />
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -100,7 +104,7 @@ export default function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.45 }}
             className="font-assistant text-white/75 mt-6 text-base sm:text-lg tracking-wide"
           >
-            8–15 באוקטובר 2026 · קופנגן, תאילנד
+            8–16 באוקטובר 2026 · קופנגן, תאילנד
           </motion.p>
 
           <motion.div
@@ -115,9 +119,6 @@ export default function Hero() {
             >
               להרשמה <span aria-hidden="true">←</span>
             </Link>
-            <p className="font-assistant text-white/45 text-xs tracking-[0.25em] uppercase">
-              24 מקומות בלבד
-            </p>
           </motion.div>
         </motion.div>
 

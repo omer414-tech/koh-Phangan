@@ -15,6 +15,7 @@ export const IMAGES = {
   villaInterior:    "/images/villa-living.jpeg",
   villaRoom:        "/images/villa-room.jpeg",
   villaView:        "/images/villa-view.jpeg",
+  villaView2:       "/images/villa-view-2.jpeg",
   villaPoolGolden:  "/images/villa-pool-sunset.jpeg",
   villaPoolDusk:    "/images/villa-sunset.jpeg",
   villaSunset:      "/images/villa-sunset.jpeg",
@@ -28,4 +29,8 @@ export const IMAGES = {
   meditationCircle: "/images/villa-room.jpeg",
   ecstaticDance:    "/images/ecstatic-dance.jpg",
   jungleTemple:     "/images/jungle-temple.jpg",
+
+  // Logos
+  alohaLogo:   "/images/aloha-logo.png",
+  sayLessLogo: "/images/say-less-logo.png",
 } as const;

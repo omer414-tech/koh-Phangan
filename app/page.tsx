@@ -1,8 +1,8 @@
 import Splash from "@/components/ui/Splash";
 import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/sections/Hero";
-import MosaicIntro from "@/components/sections/MosaicIntro";
 import Welcome from "@/components/sections/Welcome";
+import WhyKohPhangan from "@/components/sections/WhyKohPhangan";
 import MosaicSpace from "@/components/sections/MosaicSpace";
 import Hosts from "@/components/sections/Hosts";
 import WhatsIncluded from "@/components/sections/WhatsIncluded";
@@ -19,11 +19,9 @@ export default function Home() {
       <Splash />
       <Navbar />
       <main>
-        {/* Hero — untouched */}
         <Hero />
-        {/* Everything below uses the mosaic / bold-card design system */}
-        <MosaicIntro />
         <Welcome />
+        <WhyKohPhangan />
         <MosaicSpace />
         <Hosts />
         <WhatsIncluded />

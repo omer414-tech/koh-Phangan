@@ -23,14 +23,6 @@ export default function Pricing() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.3}>
-          <div className="flex justify-center mb-5">
-            <span className="inline-block bg-[#6E8A7F] text-[#ECEEE9] font-assistant font-semibold text-sm px-6 py-2 rounded-full tracking-widest">
-              24 מקומות בלבד
-            </span>
-          </div>
-        </Reveal>
-
         {/* Price cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
           <Reveal delay={0.2} direction="right">

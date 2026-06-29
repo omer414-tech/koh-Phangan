@@ -72,11 +72,6 @@ export default function JoinUs() {
           </p>
         </Reveal>
 
-        <Reveal delay={0.7}>
-          <p className="font-poppins tracking-[0.3em] text-[#8DA293]/40 text-xs uppercase">
-            ALOHA YOGA ✕ SAY LESS STUDIOS
-          </p>
-        </Reveal>
       </div>
 
       {/* Nord-style oversized wordmark — fits fully on all viewports */}

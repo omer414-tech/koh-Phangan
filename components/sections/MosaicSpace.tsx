@@ -1,20 +1,7 @@
-"use client";
-
-import Image from "next/image";
-import Link from "next/link";
+import AesopSection from "@/components/ui/AesopSection";
+import Carousel, { Slide } from "@/components/ui/Carousel";
 import { IMAGES } from "@/lib/images";
 import { APPLY_URL } from "@/lib/config";
-import { useLang } from "@/components/ui/LanguageProvider";
-import Carousel, { Slide } from "@/components/ui/Carousel";
-
-const BG = IMAGES.villaSofa;
-
-const services = [
-  { he: "יוגה\nומדיטציה", en: "Yoga &\nMeditation", num: "01", active: true },
-  { he: "סדנאות\nווולנס", en: "Workshops\n& Wellness", num: "02", active: false },
-  { he: "שף\nפרטי", en: "Private\nChef", num: "03", active: false },
-  { he: "קהילה\nוחופש", en: "Community\n& Freedom", num: "04", active: false },
-];
 
 const gallery: Slide[] = [
   { src: IMAGES.villaPool, alt: "בריכת אינפיניטי של הוילה עם נוף פתוח לים" },
@@ -25,67 +12,32 @@ const gallery: Slide[] = [
 ];
 
 export default function MosaicSpace() {
-  const { lang } = useLang();
-  const t = (p: { he: string; en: string }) => p[lang];
-
   return (
-    <section
-      id="our-space"
-      aria-label="Our Space"
-      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#ECEEE9] flex flex-col gap-1.5 md:gap-2"
-    >
-      {/* One large image filling the whole area */}
-      <div className="relative w-full h-[70vh] min-h-[460px] overflow-hidden">
-        <Image
-          src={BG}
-          alt="טרסת הוילה עם ספות פתוחות ונוף לים"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/75 via-[#1E2723]/10 to-[#1E2723]/25" aria-hidden="true" />
-
-        {/* Heading */}
-        <div className="absolute top-5 start-5 md:top-8 md:start-9 z-10">
-          <h2 className="font-heading text-[#ECEEE9] text-3xl md:text-5xl font-bold">
-            {t({ he: "המרחב שלנו", en: "Our Space" })}
-          </h2>
-          <p className="font-assistant text-[#ECEEE9]/85 text-sm md:text-base font-semibold mt-1">
-            {t({ he: "שתי וילות יוקרה בלב קופנגן", en: "Two luxury villas in the heart of the island" })}
-          </p>
-        </div>
-
-        {/* CTA */}
-        <Link
-          href={APPLY_URL}
-          className="absolute top-5 end-5 md:top-8 md:end-9 z-10 px-5 py-2.5 md:px-7 md:py-3.5 bg-[#ECEEE9] text-[#28302C] text-sm md:text-base font-bold hover:scale-105 transition-transform"
-        >
-          {t({ he: "להרשמה", en: "Apply" })}
-        </Link>
-
-        {/* Four squares — original layout, more transparent */}
-        <div className="absolute inset-x-3 bottom-3 md:inset-x-5 md:bottom-5 z-10 grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-2">
-          {services.map((svc) => (
-            <div
-              key={svc.he}
-              className={`p-3 md:p-5 flex flex-col justify-between aspect-square md:aspect-auto md:h-32 ${
-                svc.active ? "bg-[#ECEEE9]/20 backdrop-blur-sm" : "bg-white/5 backdrop-blur-sm"
-              }`}
-            >
-              <h3 className="font-heading text-base md:text-2xl font-bold leading-[1.05] whitespace-pre-line text-[#ECEEE9] drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
-                {t(svc)}
-              </h3>
-              <span className="self-end w-7 h-7 md:w-10 md:h-10 rounded-full border border-[#ECEEE9] text-[#ECEEE9] flex items-center justify-center text-[10px] md:text-xs font-semibold">
-
-                {svc.num}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
+    <>
+      <AesopSection
+        id="our-space"
+        reverse
+        eyebrow="Our space"
+        heading="המרחב שלנו"
+        subline="שתי וילות יוקרה בלב קופנגן."
+        paragraph="בחרנו שתי וילות שמרגישים בהן — עטופות בטבע, עם בריכות אינפיניטי ונוף פתוח אל הים. מרחב שקט שאליו חוזרים בסוף כל יום כדי לנוח, להתחבר ולהרגיש בבית."
+        image={IMAGES.villaSofa}
+        imageAlt="טרסת הוילה עם ספות פתוחות ונוף לים"
+        cta={{ label: "להרשמה ←", href: APPLY_URL }}
+        details={[
+          { label: "יוגה ומדיטציה", value: "תרגול יומי, בוקר וערב" },
+          { label: "סדנאות ווולנס", value: "נשימה, חשיפה לקור וטקסים" },
+          { label: "שף פרטי", value: "ארוחות איכותיות בוילה" },
+          { label: "קהילה וחופש", value: "אנשים מעוררי השראה מכל העולם" },
+        ]}
+      />
 
       {/* Interactive villa-photo carousel */}
-      <Carousel slides={gallery} />
-    </section>
+      <section className="bg-[#ECEEE9] px-5 md:px-8 pb-section">
+        <div className="max-w-6xl mx-auto">
+          <Carousel slides={gallery} />
+        </div>
+      </section>
+    </>
   );
 }

@@ -32,11 +32,11 @@ const assistant = Assistant({
 export const metadata: Metadata = {
   title: "ריטריט קופנגן · אוקטובר 2026",
   description:
-    "ריטריט יוקרה בקופנגן, תאילנד · 8–15 באוקטובר 2026 · Aloha Yoga ✕ Say Less Studios · 24 מקומות בלבד",
+    "ריטריט יוקרה בקופנגן, תאילנד · 8–16 באוקטובר 2026",
   openGraph: {
     title: "ריטריט קופנגן · אוקטובר 2026",
     description:
-      "ריטריט יוקרה בקופנגן, תאילנד · 8–15 באוקטובר 2026 · Aloha Yoga ✕ Say Less Studios",
+      "ריטריט יוקרה בקופנגן, תאילנד · 8–16 באוקטובר 2026 · Aloha Yoga ✕ Say Less Studios",
     locale: "he_IL",
     type: "website",
     // TODO: Add real OG image at /public/og-image.jpg (1200×630)

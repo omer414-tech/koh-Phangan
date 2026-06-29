@@ -49,9 +49,6 @@ export default function Navbar() {
           <span className="font-heading text-[#28302C] text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none -mt-1.5 md:-mt-2">
             Phangan
           </span>
-          <span className="font-assistant text-[#28302C]/70 text-[8px] md:text-[9px] font-medium leading-none mt-1.5 md:mt-2 tracking-[0.2em] uppercase">
-            Retreat 2026
-          </span>
         </Link>
 
         {/* Desktop menu (right) */}
