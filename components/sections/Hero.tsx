@@ -75,29 +75,6 @@ export default function Hero() {
             Koh Phangan
           </motion.h1>
 
-          {/* Brand logos under the wordmark */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease, delay: 0.4 }}
-            className="mt-2 flex items-center justify-center gap-2 sm:gap-4"
-          >
-            <Image
-              src={IMAGES.alohaLogo}
-              alt="Aloha Yoga"
-              width={300}
-              height={300}
-              className="w-28 sm:w-40 h-auto object-contain"
-            />
-            <Image
-              src={IMAGES.sayLessLogo}
-              alt="Say Less Studios"
-              width={300}
-              height={300}
-              className="w-28 sm:w-40 h-auto object-contain"
-            />
-          </motion.div>
-
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}

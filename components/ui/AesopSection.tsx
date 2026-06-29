@@ -30,22 +30,20 @@ export default function AesopSection({
   return (
     <section id={id} className="bg-[#ECEEE9] py-section px-5 md:px-8">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2">
-        {/* Image on a soft panel */}
+        {/* Image — fills its column, no frame */}
         <Reveal
-          className={`bg-[#DCE0D8] flex items-center justify-center p-6 md:p-10 ${
+          className={`relative w-full aspect-[4/5] md:aspect-auto md:h-full md:min-h-[460px] overflow-hidden ${
             reverse ? "md:order-2" : "md:order-1"
           }`}
           direction={reverse ? "left" : "right"}
         >
-          <div className="relative w-full max-w-[440px] aspect-[3/4] overflow-hidden">
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 90vw, 440px"
-            />
-          </div>
+          <Image
+            src={image}
+            alt={imageAlt}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </Reveal>
 
         {/* Text */}

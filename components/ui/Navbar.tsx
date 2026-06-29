@@ -2,7 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { APPLY_URL } from "@/lib/config";
+import { IMAGES } from "@/lib/images";
 import { useLang } from "@/components/ui/LanguageProvider";
 
 const links = [
@@ -41,14 +43,23 @@ export default function Navbar() {
     <>
       {/* flex-row-reverse → menu on the right, logo on the left */}
       <nav className="fixed top-0 inset-x-0 z-50 flex flex-row-reverse items-center justify-between px-4 md:px-6 py-2 md:py-3 bg-[#ECEEE9]/80 backdrop-blur-md">
-        {/* Logo (left) */}
-        <Link href="#hero" className="flex flex-col items-start text-left" aria-label="Koh Phangan Retreat">
-          <span className="font-heading text-[#28302C] text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none">
-            Koh
-          </span>
-          <span className="font-heading text-[#28302C] text-xl md:text-2xl font-extrabold uppercase tracking-tight leading-none -mt-1.5 md:-mt-2">
-            Phangan
-          </span>
+        {/* Logos (left) */}
+        <Link href="#hero" className="flex items-center gap-2 sm:gap-3" aria-label="Aloha Yoga · Say Less Studios">
+          <Image
+            src={IMAGES.alohaLogo}
+            alt="Aloha Yoga"
+            width={200}
+            height={200}
+            className="w-20 sm:w-28 h-auto object-contain brightness-0 opacity-80"
+          />
+          <span className="w-px h-5 bg-[#28302C]/25" aria-hidden="true" />
+          <Image
+            src={IMAGES.sayLessLogo}
+            alt="Say Less Studios"
+            width={200}
+            height={200}
+            className="w-20 sm:w-28 h-auto object-contain brightness-0 opacity-80"
+          />
         </Link>
 
         {/* Desktop menu (right) */}

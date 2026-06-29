@@ -29,7 +29,7 @@ export default function Hosts() {
       <div className="max-w-5xl mx-auto">
         {/* Centerpiece */}
         <Reveal>
-          <div className="text-center mb-10 md:mb-0">
+          <div className="text-center mb-12 md:mb-16">
             <p className="eyebrow mb-3">Our team</p>
             <p className="font-poppins italic text-[#28302C] text-2xl md:text-4xl">
               האנשים שמאחורי הריטריט
@@ -41,7 +41,7 @@ export default function Hosts() {
         </Reveal>
 
         {/* Staggered host cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 md:-mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {hosts.map((host, i) => (
             <Reveal key={host.name} delay={0.1 + i * 0.1} direction={i === 0 ? "right" : "left"}>
               <article className={`max-w-sm ${i === 1 ? "md:ms-auto" : ""} ${host.offset}`}>
