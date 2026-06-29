@@ -40,7 +40,7 @@ export default function Welcome() {
 
             {/* Bottom content: heading (start) + paragraph & CTA (end) */}
             <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10 lg:p-14">
-              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+              <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
                 <Reveal delay={0.2}>
                   <h2
                     className="font-heading text-[#ECEEE9] leading-[0.95] max-w-xl"
@@ -51,7 +51,7 @@ export default function Welcome() {
                 </Reveal>
 
                 <Reveal delay={0.35} direction="left">
-                  <div className="max-w-md space-y-6">
+                  <div className="max-w-md space-y-4">
                     <p className="font-assistant text-[#ECEEE9]/85 leading-relaxed whitespace-pre-line text-sm sm:text-base">
                       {`יש מקומות שפשוט מרגישים אחרת.
 כבר מהרגע שמגיעים אליהם משהו בפנים מתחיל להאט.
@@ -76,7 +76,7 @@ export default function Welcome() {
       {/* ── Block 2: Why Koh Phangan — image + text (reversed), beige band ── */}
       <div className="py-section px-6 bg-[#DCE0D8]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center">
             <Reveal className="lg:col-span-6 lg:order-1 order-2" delay={0.3} direction="right">
               <div className="relative w-full aspect-[4/3]  overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.45)]">
                 <Image
@@ -89,7 +89,7 @@ export default function Welcome() {
               </div>
             </Reveal>
 
-            <div className="lg:col-span-6 lg:order-2 order-1 space-y-7">
+            <div className="lg:col-span-6 lg:order-2 order-1 space-y-4">
               <Reveal delay={0.1}>
                 <p className="eyebrow">Why Koh Phangan</p>
               </Reveal>

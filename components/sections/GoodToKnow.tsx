@@ -15,7 +15,7 @@ export default function GoodToKnow() {
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#28302C] mb-8 leading-[1.05]"
+            className="font-heading text-[#28302C] mb-5 leading-[1.05]"
             style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)" }}
           >
             חשוב לדעת

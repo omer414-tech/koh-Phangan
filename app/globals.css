@@ -21,7 +21,7 @@
   --font-heading: var(--font-poppins), var(--font-noto-hebrew), sans-serif;
 
   /* ── Spacing rhythm (compact) ── */
-  --spacing-section: clamp(3rem, 6vw, 5.5rem);
+  --spacing-section: clamp(2rem, 4vw, 4rem);
 
   /* ── Border radius (square images per design) ── */
   --radius-card: 0;

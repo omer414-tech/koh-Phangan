@@ -33,14 +33,14 @@ export default function WhatsIncluded() {
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#28302C] mb-8 leading-[1.05]"
+            className="font-heading text-[#28302C] mb-5 leading-[1.05]"
             style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
             מה כלול בריטריט
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center mb-5">
           <Reveal className="lg:col-span-5" delay={0.2} direction="right">
             <div className="relative w-full aspect-[4/3]  overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.45)]">
               <Image
@@ -53,7 +53,7 @@ export default function WhatsIncluded() {
             </div>
           </Reveal>
 
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-10">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
             {categories.map((cat, ci) => (
               <Reveal key={cat.title} delay={0.15 + ci * 0.15}>
                 <div className="space-y-5">

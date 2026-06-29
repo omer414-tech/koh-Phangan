@@ -32,14 +32,14 @@ export default function Hosts() {
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#28302C] text-center mb-8 leading-[1.05]"
+            className="font-heading text-[#28302C] text-center mb-5 leading-[1.05]"
             style={{ fontSize: "clamp(2rem, 5vw, 3.75rem)" }}
           >
             הכירו את המארחים
           </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-6">
           {hosts.map((host, i) => (
             <Reveal key={host.name} delay={0.15 + i * 0.15} direction={i === 0 ? "right" : "left"}>
               <article className="flex flex-col items-center text-center gap-6">

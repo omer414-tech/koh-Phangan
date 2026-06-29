@@ -79,11 +79,11 @@ export default function JoinUs() {
         </Reveal>
       </div>
 
-      {/* Nord-style oversized wordmark */}
-      <div className="relative z-10 mt-20 sm:mt-28 overflow-hidden">
+      {/* Nord-style oversized wordmark — fits fully on all viewports */}
+      <div className="relative z-10 mt-16 sm:mt-24 px-2">
         <p
-          className="font-heading uppercase text-center text-[#ECEEE9]/12 leading-[0.8] whitespace-nowrap select-none"
-          style={{ fontSize: "clamp(3.5rem, 19vw, 17rem)" }}
+          className="font-heading uppercase text-center text-[#ECEEE9]/12 leading-[0.85] whitespace-nowrap select-none w-full"
+          style={{ fontSize: "clamp(2rem, 13vw, 11rem)" }}
           aria-hidden="true"
         >
           Koh Phangan

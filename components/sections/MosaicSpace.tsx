@@ -69,21 +69,14 @@ export default function MosaicSpace() {
             <div
               key={svc.he}
               className={`p-3 md:p-5 flex flex-col justify-between aspect-square md:aspect-auto md:h-32 ${
-                svc.active ? "bg-[#ECEEE9]/70 backdrop-blur-md" : "bg-white/10 backdrop-blur-xl"
+                svc.active ? "bg-[#ECEEE9]/20 backdrop-blur-sm" : "bg-white/5 backdrop-blur-sm"
               }`}
             >
-              <h3
-                className={`font-heading text-base md:text-2xl font-bold leading-[1.05] whitespace-pre-line ${
-                  svc.active ? "text-[#28302C]" : "text-[#ECEEE9]"
-                }`}
-              >
+              <h3 className="font-heading text-base md:text-2xl font-bold leading-[1.05] whitespace-pre-line text-[#ECEEE9] drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
                 {t(svc)}
               </h3>
-              <span
-                className={`self-end w-7 h-7 md:w-10 md:h-10 rounded-full border flex items-center justify-center text-[10px] md:text-xs font-semibold ${
-                  svc.active ? "border-[#28302C] text-[#28302C]" : "border-[#ECEEE9] text-[#ECEEE9]"
-                }`}
-              >
+              <span className="self-end w-7 h-7 md:w-10 md:h-10 rounded-full border border-[#ECEEE9] text-[#ECEEE9] flex items-center justify-center text-[10px] md:text-xs font-semibold">
+
                 {svc.num}
               </span>
             </div>

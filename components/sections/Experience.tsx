@@ -40,7 +40,7 @@ export default function Experience() {
         </Reveal>
         <Reveal delay={0.2}>
           <h2
-            className="font-heading text-[#28302C] leading-[1.05] mb-8"
+            className="font-heading text-[#28302C] leading-[1.05] mb-5"
             style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
             עוד מהריטריט
@@ -74,7 +74,7 @@ export default function Experience() {
         </div>
 
         {/* Pillars as 3 compact columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {pillars.map((pillar, i) => (
             <Reveal key={pillar.eyebrow} delay={0.1 + i * 0.1}>
               <div className="space-y-3 border-t border-[#8DA293]/40 pt-4">

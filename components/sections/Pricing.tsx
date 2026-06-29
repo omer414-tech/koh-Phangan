@@ -24,7 +24,7 @@ export default function Pricing() {
         </Reveal>
 
         <Reveal delay={0.3}>
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mb-5">
             <span className="inline-block bg-[#6E8A7F] text-[#ECEEE9] font-assistant font-semibold text-sm px-6 py-2 rounded-full tracking-widest">
               24 מקומות בלבד
             </span>
@@ -32,7 +32,7 @@ export default function Pricing() {
         </Reveal>
 
         {/* Price cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
           <Reveal delay={0.2} direction="right">
             <article className=" bg-white/50 shadow-sm border border-[#8DA293]/25 p-10 flex flex-col gap-4 hover:shadow-md transition-shadow duration-300">
               <h3 className="font-heading text-[#28302C] text-2xl">חדר זוגי</h3>
