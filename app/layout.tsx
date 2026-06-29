@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Noto_Sans_Hebrew, Assistant, Almarai, Instrument_Serif } from "next/font/google";
+import { Poppins, Noto_Sans_Hebrew, Assistant } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import FloatingCTA from "@/components/ui/FloatingCTA";
@@ -29,22 +29,6 @@ const assistant = Assistant({
   display: "swap",
 });
 
-// Prisma design: Almarai (Latin global) + Instrument Serif italic (accents)
-const almarai = Almarai({
-  subsets: ["arabic"],
-  weight: ["300", "400", "700", "800"],
-  variable: "--font-almarai",
-  display: "swap",
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: "italic",
-  variable: "--font-instrument",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   title: "ריטריט קופנגן · אוקטובר 2026",
   description:
@@ -69,7 +53,7 @@ export default function RootLayout({
     <html
       lang="he"
       dir="rtl"
-      className={`${poppins.variable} ${notoHebrew.variable} ${assistant.variable} ${almarai.variable} ${instrumentSerif.variable}`}
+      className={`${poppins.variable} ${notoHebrew.variable} ${assistant.variable}`}
     >
       <body>
         <LanguageProvider>

@@ -8,7 +8,7 @@ export default function JoinUs() {
   return (
     <section
       aria-label="Join Us"
-      className="py-[clamp(5rem,10vw,9rem)] px-6 bg-[#161616] relative overflow-hidden"
+      className="py-[clamp(5rem,10vw,9rem)] px-6 bg-[#2A3A33] relative overflow-hidden"
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image
@@ -18,7 +18,7 @@ export default function JoinUs() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[#161616]/80" />
+        <div className="absolute inset-0 bg-[#2A3A33]/80" />
       </div>
 
       <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center gap-8">
@@ -55,7 +55,7 @@ export default function JoinUs() {
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-poppins italic text-sm hover:text-[#DEDBC8] transition-colors duration-300"
+              className="font-poppins italic text-sm hover:text-[#A7B8AC] transition-colors duration-300"
             >
               {INSTAGRAM_HANDLE}
             </a>
@@ -63,17 +63,17 @@ export default function JoinUs() {
         </Reveal>
 
         <Reveal delay={0.6}>
-          <div className="w-16 h-px bg-[#DEDBC8]/30" />
+          <div className="w-16 h-px bg-[#8DA293]/30" />
         </Reveal>
 
         <Reveal delay={0.65}>
-          <p className="font-poppins text-[#DEDBC8]/70 tracking-widest text-sm">
+          <p className="font-poppins text-[#8DA293]/70 tracking-widest text-sm">
             Koh Phangan · {RETREAT_DATES}
           </p>
         </Reveal>
 
         <Reveal delay={0.7}>
-          <p className="font-poppins tracking-[0.3em] text-[#DEDBC8]/40 text-xs uppercase">
+          <p className="font-poppins tracking-[0.3em] text-[#8DA293]/40 text-xs uppercase">
             ALOHA YOGA ✕ SAY LESS STUDIOS
           </p>
         </Reveal>

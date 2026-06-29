@@ -32,7 +32,7 @@ export default function MosaicSpace() {
     <section
       id="our-space"
       aria-label="Our Space"
-      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-black flex flex-col gap-1.5 md:gap-2"
+      className="w-full px-3 md:px-5 py-1.5 md:py-2 bg-[#ECEEE9] flex flex-col gap-1.5 md:gap-2"
     >
       {/* One large image filling the whole area */}
       <div className="relative w-full h-[70vh] min-h-[460px] overflow-hidden">
@@ -43,7 +43,7 @@ export default function MosaicSpace() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#000000]/75 via-[#000000]/10 to-[#000000]/25" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1E2723]/75 via-[#1E2723]/10 to-[#1E2723]/25" aria-hidden="true" />
 
         {/* Heading */}
         <div className="absolute top-5 start-5 md:top-8 md:start-9 z-10">
@@ -58,7 +58,7 @@ export default function MosaicSpace() {
         {/* CTA */}
         <Link
           href={APPLY_URL}
-          className="absolute top-5 end-5 md:top-8 md:end-9 z-10 px-5 py-2.5 md:px-7 md:py-3.5 bg-black text-[#E1E0CC] text-sm md:text-base font-bold hover:scale-105 transition-transform"
+          className="absolute top-5 end-5 md:top-8 md:end-9 z-10 px-5 py-2.5 md:px-7 md:py-3.5 bg-[#ECEEE9] text-[#28302C] text-sm md:text-base font-bold hover:scale-105 transition-transform"
         >
           {t({ he: "להרשמה", en: "Apply" })}
         </Link>
@@ -69,19 +69,19 @@ export default function MosaicSpace() {
             <div
               key={svc.he}
               className={`p-3 md:p-5 flex flex-col justify-between aspect-square md:aspect-auto md:h-32 ${
-                svc.active ? "bg-black/70 backdrop-blur-md" : "bg-white/10 backdrop-blur-xl"
+                svc.active ? "bg-[#ECEEE9]/70 backdrop-blur-md" : "bg-white/10 backdrop-blur-xl"
               }`}
             >
               <h3
                 className={`font-heading text-base md:text-2xl font-bold leading-[1.05] whitespace-pre-line ${
-                  svc.active ? "text-[#E1E0CC]" : "text-[#ECEEE9]"
+                  svc.active ? "text-[#28302C]" : "text-[#ECEEE9]"
                 }`}
               >
                 {t(svc)}
               </h3>
               <span
                 className={`self-end w-7 h-7 md:w-10 md:h-10 rounded-full border flex items-center justify-center text-[10px] md:text-xs font-semibold ${
-                  svc.active ? "border-[#28302C] text-[#E1E0CC]" : "border-[#ECEEE9] text-[#ECEEE9]"
+                  svc.active ? "border-[#28302C] text-[#28302C]" : "border-[#ECEEE9] text-[#ECEEE9]"
                 }`}
               >
                 {svc.num}

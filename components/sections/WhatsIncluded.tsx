@@ -1,120 +1,92 @@
-"use client";
-
-import { useRef } from "react";
 import Image from "next/image";
-import { motion, useInView } from "framer-motion";
+import Reveal from "@/components/ui/Reveal";
 import { IMAGES } from "@/lib/images";
-import { WordsPullUpMultiStyle } from "@/components/ui/WordsPullUp";
 
-const cards = [
+const categories = [
   {
-    num: "01",
     title: "לינה",
+    // Change 3d: new lodging text
     items: [
-      "7 לילות בוילות יוקרה במרכז האי",
-      "נוף לים ובריכות אינפיניטי",
-      "שף פרטי",
-      "ניקיון יומי",
+      "7 לילות בוילות יוקרתיות הממוקמות במרכז האי",
+      "נוף מטורף לים ובריכות אינפיניטי",
+      "שף פרטי וניקיון יומי",
     ],
   },
   {
-    num: "02",
-    title: "תנועה ווולנס",
+    title: "תנועה, כושר ווולנס",
     items: [
       "יוגה ומדיטציות יומיות",
       "אקסטטיק דאנס וריקוד קונטקט",
       "מוי טאי וקרוספיט",
       "נשימה וחשיפה לקור",
-    ],
-  },
-  {
-    num: "03",
-    title: "חוויות וקהילה",
-    items: [
-      "סדנאות ומעגלי שיח",
-      "טיולים וחופים נסתרים",
-      "אנשים מעוררי השראה",
+      "טקס קקאו וסאונד הילינג",
     ],
   },
 ];
 
-const Check = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 shrink-0 mt-0.5" style={{ color: "#DEDBC8" }}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M20 6L9 17l-5-5" />
-  </svg>
-);
-
-const Arrow = () => (
-  <svg viewBox="0 0 14 14" fill="none" className="w-3.5 h-3.5 rotate-[-45deg]" style={{ color: "#DEDBC8" }}>
-    <path d="M1 7h12m0 0L8 2m5 5L8 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
 export default function WhatsIncluded() {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section id="included" aria-label="What's Included" className="relative min-h-screen bg-black px-4 md:px-6 py-16 md:py-24 overflow-hidden">
-      <div className="bg-noise absolute inset-0 opacity-[0.15] pointer-events-none" aria-hidden="true" />
-
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Header */}
-        <h2 className="font-almarai text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal mb-10 md:mb-14 max-w-2xl">
-          <WordsPullUpMultiStyle
-            segments={[
-              { text: "כל מה שצריך כדי פשוט להיות.", className: "" },
-              { text: "בנוי לנוכחות, מונע מאהבה.", className: "" },
-            ]}
-            style={{ color: "#E1E0CC" }}
-          />
-        </h2>
-
-        {/* Card grid */}
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 lg:h-[480px]">
-          {/* Card 1 — image */}
-          <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={inView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 0.7, delay: 0, ease: [0.22, 1, 0.36, 1] }}
-            className="relative overflow-hidden rounded-2xl min-h-[260px]"
+    <section id="included" aria-label="What's Included" className="bg-[#ECEEE9] py-section px-6">
+      <div className="max-w-6xl mx-auto">
+        <Reveal delay={0.1}>
+          <p className="eyebrow mb-5">What&apos;s included</p>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <h2
+            className="font-heading text-[#28302C] mb-8 leading-[1.05]"
+            style={{ fontSize: "clamp(2.5rem, 6vw, 4.5rem)" }}
           >
-            <Image src={IMAGES.villaPool} alt="המרחב שלך" fill className="object-cover" sizes="(max-width:1024px) 100vw, 25vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" aria-hidden="true" />
-            <p className="absolute bottom-5 start-5 font-almarai text-lg font-bold" style={{ color: "#E1E0CC" }}>
-              המרחב שלך.
-            </p>
-          </motion.div>
+            מה כלול בריטריט
+          </h2>
+        </Reveal>
 
-          {/* Cards 2-4 */}
-          {cards.map((card, i) => (
-            <motion.div
-              key={card.num}
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={inView ? { scale: 1, opacity: 1 } : {}}
-              transition={{ duration: 0.7, delay: (i + 1) * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="bg-[#212121] rounded-2xl p-5 md:p-6 flex flex-col min-h-[260px]"
-            >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#DEDBC8]/10 flex items-center justify-center mb-5">
-                <span className="font-serif-italic text-xl" style={{ color: "#DEDBC8" }}>{card.num}</span>
-              </div>
-              <h3 className="font-almarai text-xl md:text-2xl font-bold mb-4" style={{ color: "#E1E0CC" }}>
-                {card.title}
-              </h3>
-              <ul className="space-y-2.5 flex-1" role="list">
-                {card.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <Check />
-                    <span className="font-almarai text-sm text-gray-400 leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <button type="button" className="mt-5 flex items-center gap-2 font-almarai text-sm" style={{ color: "#DEDBC8" }}>
-                עוד <Arrow />
-              </button>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center mb-8">
+          <Reveal className="lg:col-span-5" delay={0.2} direction="right">
+            <div className="relative w-full aspect-[4/3]  overflow-hidden shadow-[0_30px_60px_-30px_rgba(46,38,32,0.45)]">
+              <Image
+                src={IMAGES.meditationCircle}
+                alt="מעגל מדיטציה ויוגה בריטריט קופנגן"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 42vw"
+              />
+            </div>
+          </Reveal>
+
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-10">
+            {categories.map((cat, ci) => (
+              <Reveal key={cat.title} delay={0.15 + ci * 0.15}>
+                <div className="space-y-5">
+                  <h3
+                    className="font-heading text-[#6E8A7F]"
+                    style={{ fontSize: "clamp(1.1rem, 2vw, 1.4rem)" }}
+                  >
+                    {cat.title}
+                  </h3>
+                  <ul className="space-y-3" role="list">
+                    {cat.items.map((item) => (
+                      <li key={item} className="flex items-start gap-4">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#8DA293] shrink-0" aria-hidden="true" />
+                        <span className="font-assistant text-[#28302C]/80 leading-snug text-base">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
+
+        <Reveal delay={0.5}>
+          <p
+            className="font-poppins italic text-[#28302C]/50 text-center"
+            style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}
+          >
+            וזו רק ההתחלה — הרבה מעבר לריטריט רגיל.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
