@@ -33,7 +33,7 @@ function Row({ item, index }: { item: Item; index: number }) {
       {/* Activity */}
       <div className="flex-1 text-start order-2">
         <h3
-          className={`font-heading mb-0.5 ${item.highlight ? "text-[#6E8A7F]" : "text-[#28302C]"}`}
+          className={`font-assistant font-normal mb-0.5 ${item.highlight ? "text-[#6E8A7F]" : "text-[#28302C]"}`}
           style={{ fontSize: "clamp(0.9rem, 1.4vw, 1.1rem)" }}
         >
           {item.title}
