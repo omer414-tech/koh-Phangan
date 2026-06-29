@@ -48,9 +48,9 @@ export default function Navbar() {
           <Image
             src={IMAGES.alohaLogo}
             alt="Aloha Yoga"
-            width={200}
-            height={80}
-            className="h-6 sm:h-7 w-auto object-contain brightness-0 opacity-80"
+            width={400}
+            height={120}
+            className="h-10 sm:h-12 w-auto object-contain brightness-0 opacity-90"
           />
         </Link>
 
