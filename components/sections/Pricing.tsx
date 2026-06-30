@@ -2,7 +2,7 @@ import Reveal from "@/components/ui/Reveal";
 
 const rooms = [
   { num: "01", name: "אדם בחדר זוגי", desc: "אותה חוויה לכולם — שתי אפשרויות לינה", price: "₪8,000" },
-  { num: "02", name: "אדם בחדר רביעייה", desc: "אותה חוויה לכולם — שתי אפשרויות לינה", price: "₪7,200" },
+  { num: "02", name: "אדם בחדר לרביעייה", desc: "אותה חוויה לכולם — שתי אפשרויות לינה", price: "₪7,200" },
 ];
 
 const notIncluded = [

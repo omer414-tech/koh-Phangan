@@ -38,8 +38,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6">
         <h1
           dir="ltr"
-          className="font-poppins uppercase text-white max-w-6xl leading-[0.92] tracking-tight"
-          style={{ fontSize: "clamp(3.25rem, 13vw, 8rem)", fontWeight: 700, perspective: 700 }}
+          className="font-poppins uppercase text-white whitespace-nowrap leading-[0.92] tracking-tight"
+          style={{ fontSize: "clamp(2rem, 11.5vw, 8rem)", fontWeight: 700, perspective: 700 }}
         >
           {TITLE.map((ch, i) => (
             <motion.span
