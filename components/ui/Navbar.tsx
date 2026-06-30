@@ -50,7 +50,7 @@ export default function Navbar() {
             alt="Aloha Yoga"
             width={400}
             height={120}
-            className="h-10 sm:h-12 w-auto object-contain brightness-0 opacity-90"
+            className="h-8 sm:h-10 w-auto object-contain brightness-0 opacity-90"
           />
         </Link>
 

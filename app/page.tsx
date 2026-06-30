@@ -15,7 +15,7 @@ import JoinUs from "@/components/sections/JoinUs";
 
 export default function Home() {
   return (
-    <div className="bg-[#ECEEE9]">
+    <div className="bg-[#ECEEE9] overflow-x-hidden">
       <Splash />
       <Navbar />
       <main>

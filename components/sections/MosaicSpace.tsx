@@ -33,7 +33,7 @@ export default function MosaicSpace() {
       />
 
       {/* Interactive villa-photo carousel */}
-      <section className="bg-[#ECEEE9] px-5 md:px-8 pb-section">
+      <section className="bg-[#ECEEE9] px-5 md:px-8 pb-[clamp(1.5rem,3vw,3rem)]">
         <div className="max-w-6xl mx-auto">
           <Carousel slides={gallery} />
         </div>

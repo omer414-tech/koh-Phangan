@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/ui/Reveal";
-import { APPLY_URL, INSTAGRAM_URL, INSTAGRAM_HANDLE, RETREAT_DATES } from "@/lib/config";
+import { APPLY_URL, RETREAT_DATES } from "@/lib/config";
 import { IMAGES } from "@/lib/images";
 
 export default function JoinUs() {
   return (
     <section
       aria-label="Join Us"
-      className="py-[clamp(5rem,10vw,9rem)] px-6 bg-[#2A3A33] relative overflow-hidden"
+      className="py-[clamp(2.5rem,5vw,4rem)] px-6 bg-[#2A3A33] relative overflow-hidden"
     >
       <div className="absolute inset-0" aria-hidden="true">
         <Image
@@ -21,7 +21,7 @@ export default function JoinUs() {
         <div className="absolute inset-0 bg-[#2A3A33]/80" />
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center gap-8">
+      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center gap-4">
         <Reveal delay={0.1}>
           <p className="eyebrow">Join us</p>
         </Reveal>
@@ -29,53 +29,33 @@ export default function JoinUs() {
         <Reveal delay={0.2}>
           <h2
             className="font-heading text-[#ECEEE9] leading-[1.05]"
-            style={{ fontSize: "clamp(2.5rem, 7vw, 5rem)" }}
+            style={{ fontSize: "clamp(2.25rem, 7vw, 4.5rem)" }}
           >
             המסע שלך מתחיל כאן
           </h2>
         </Reveal>
 
         <Reveal delay={0.3}>
-          <p className="font-assistant text-[#ECEEE9]/60 text-base tracking-widest uppercase">
+          <p className="font-assistant text-[#ECEEE9]/60 text-sm tracking-widest uppercase">
             מספר המקומות מוגבל
           </p>
         </Reveal>
 
-        {/* Primary CTA → /apply */}
         <Reveal delay={0.4}>
-          <Link href={APPLY_URL} className="btn-primary">
+          <Link href={APPLY_URL} className="btn-primary mt-1">
             להרשמה
           </Link>
         </Reveal>
 
-        {/* Secondary contacts */}
         <Reveal delay={0.5}>
-          <div className="flex flex-col sm:flex-row items-center gap-6 text-[#ECEEE9]/60">
-            <a
-              href={INSTAGRAM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-poppins italic text-sm hover:text-[#A7B8AC] transition-colors duration-300"
-            >
-              {INSTAGRAM_HANDLE}
-            </a>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.6}>
-          <div className="w-16 h-px bg-[#8DA293]/30" />
-        </Reveal>
-
-        <Reveal delay={0.65}>
-          <p className="font-poppins text-[#8DA293]/70 tracking-widest text-sm">
+          <p className="font-poppins text-[#8DA293]/70 tracking-widest text-sm mt-2">
             Koh Phangan · {RETREAT_DATES}
           </p>
         </Reveal>
-
       </div>
 
-      {/* Nord-style oversized wordmark — fits fully on all viewports */}
-      <div className="relative z-10 mt-16 sm:mt-24 px-2">
+      {/* Oversized wordmark */}
+      <div className="relative z-10 mt-8 sm:mt-12 px-2">
         <p
           className="font-heading uppercase text-center text-[#ECEEE9]/12 leading-[0.85] whitespace-nowrap select-none w-full"
           style={{ fontSize: "clamp(2rem, 13vw, 11rem)" }}

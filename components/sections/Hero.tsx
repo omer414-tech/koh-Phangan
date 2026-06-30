@@ -8,6 +8,7 @@ import { IMAGES } from "@/lib/images";
 import Particles from "@/components/ui/Particles";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+const TITLE = "Koh Phangan".split("");
 
 export default function Hero() {
   return (
@@ -33,22 +34,31 @@ export default function Hero() {
       {/* Twinkling particles */}
       <Particles color="255, 255, 255" />
 
-      {/* Content */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-end text-center px-6 pb-20 sm:pb-24">
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease, delay: 0.2 }}
-          className="font-poppins uppercase text-white max-w-6xl leading-[0.92] tracking-tight drop-shadow-[0_2px_30px_rgba(0,0,0,0.45)]"
-          style={{ fontSize: "clamp(3.25rem, 13vw, 8rem)", fontWeight: 700 }}
+      {/* Content — centered */}
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-6">
+        <h1
+          dir="ltr"
+          className="font-poppins uppercase text-white max-w-6xl leading-[0.92] tracking-tight"
+          style={{ fontSize: "clamp(3.25rem, 13vw, 8rem)", fontWeight: 700, perspective: 700 }}
         >
-          Koh Phangan
-        </motion.h1>
+          {TITLE.map((ch, i) => (
+            <motion.span
+              key={i}
+              initial={{ opacity: 0, y: "0.6em", rotateX: -55 }}
+              animate={{ opacity: 1, y: 0, rotateX: 0 }}
+              transition={{ duration: 0.7, ease, delay: 0.15 + i * 0.05 }}
+              className="inline-block"
+              style={{ transformOrigin: "bottom", width: ch === " " ? "0.3em" : undefined }}
+            >
+              {ch === " " ? "" : ch}
+            </motion.span>
+          ))}
+        </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease, delay: 0.4 }}
+          transition={{ duration: 0.9, ease, delay: 0.7 }}
           className="font-assistant text-white/75 mt-6 text-base sm:text-lg tracking-wide"
         >
           8–16 באוקטובר 2026 · קופנגן, תאילנד
@@ -57,7 +67,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease, delay: 0.6 }}
+          transition={{ duration: 0.9, ease, delay: 0.85 }}
           className="mt-10"
         >
           <Link
@@ -73,7 +83,7 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.1, duration: 1 }}
+        transition={{ delay: 1.2, duration: 1 }}
         className="relative z-10 flex justify-center pb-8"
         aria-hidden="true"
       >
